@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mosafer Spine · Skoliosezentrum Rosenheim</title>
+  <meta name="description" content="Dr. Mosafer – Wirbelsäulenspezialist & Skoliose-Experte in Rosenheim. Operative und konservative Behandlung, persönliche Betreuung vom Erstgespräch bis zur Nachsorge.">
+  <link rel="icon" type="image/png" href="uploads/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0f2044;--navy-deep:#091530;--navy-mid:#1a3460;
+      --blue-accent:#2a5298;--sky:#e8f0fc;
+      --white:#ffffff;--offwhite:#f7f9ff;
+      --gold:#c9a84c;
+      --text:#1a2a4a;--muted:#6b7a99;
+      --border:rgba(15,32,68,0.1)
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
+
+    /* ── Navigation ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 3.5rem;height:68px}
+    .nav-brand{display:flex;align-items:center;gap:0.75rem;text-decoration:none}
+    .nav-logo-mark{width:26px;height:34px;flex-shrink:0}
+    .nav-logo-img{height:40px;width:auto;border-radius:5px;display:block}
+    .nav-brand-text{display:flex;flex-direction:column;line-height:1.15}
+    .nav-brand-name{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--navy);letter-spacing:0.01em}
+    .nav-brand-sub{font-size:0.62rem;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+    .nav-links > li{position:relative}
+    .nav-links a{font-size:0.8rem;font-weight:500;color:var(--text);text-decoration:none;opacity:0.65;transition:opacity 0.2s;white-space:nowrap}
+    .nav-links a:hover{opacity:1}
+    .nav-cta{background:var(--navy)!important;color:var(--white)!important;opacity:1!important;padding:0.55rem 1.3rem;border-radius:3px;font-size:0.8rem!important}
+    .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+    .nav-toggle span{display:block;width:22px;height:2px;background:var(--navy)}
+    .nav-submenu{position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid var(--border);border-radius:6px;padding:0.5rem 0;min-width:240px;box-shadow:0 8px 32px rgba(15,32,68,0.1);opacity:0;visibility:hidden;transform:translateY(4px);transition:all 0.18s;list-style:none}
+    .nav-links > li:hover .nav-submenu{opacity:1;visibility:visible;transform:translateY(0)}
+    .nav-submenu a{display:block;padding:0.45rem 1.1rem;font-size:0.8rem;opacity:0.75}
+    .nav-submenu a:hover{background:var(--offwhite);opacity:1}
+
+    /* ── Hero ── */
+    .home-hero{min-height:100vh;background:linear-gradient(150deg,var(--navy-deep) 0%,var(--navy) 55%,var(--navy-mid) 100%);display:grid;grid-template-columns:1fr 600px;align-items:stretch;position:relative;overflow:hidden}
+    .home-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+    .home-hero::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:3px;background:linear-gradient(to right,var(--gold) 0%,transparent 60%)}
+
+    .hero-content{padding:calc(68px + 5rem) 4rem 5rem 4rem;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center}
+    .hero-eyebrow{font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;display:flex;align-items:center;gap:0.75rem}
+    .hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+    .hero-content h1{font-family:'DM Serif Display',serif;font-size:clamp(3rem,4.5vw,5.5rem);color:white;line-height:1.05;margin-bottom:1.6rem;letter-spacing:-0.01em}
+    .hero-content h1 em{font-style:italic;color:var(--gold)}
+    .hero-sub{font-size:1rem;line-height:1.85;color:rgba(255,255,255,0.58);font-weight:300;margin-bottom:3rem;max-width:500px}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+    .btn-primary{display:inline-block;background:white;color:var(--navy);padding:0.95rem 2.2rem;font-size:0.84rem;font-weight:500;text-decoration:none;border-radius:3px;transition:all 0.2s;letter-spacing:0.02em}
+    .btn-primary:hover{background:var(--gold);color:var(--navy-deep)}
+    .btn-ghost{display:inline-block;color:rgba(255,255,255,0.6);font-size:0.84rem;font-weight:400;text-decoration:none;padding:0.95rem 0;border-bottom:1px solid rgba(255,255,255,0.2);transition:all 0.2s}
+    .btn-ghost:hover{color:white;border-bottom-color:rgba(255,255,255,0.5)}
+
+    .hero-credentials{display:flex;gap:2rem;margin-top:4rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.08)}
+    .cred-item{display:flex;flex-direction:column;gap:0.2rem}
+    .cred-label{font-size:0.65rem;color:rgba(255,255,255,0.35);letter-spacing:0.12em;text-transform:uppercase}
+    .cred-value{font-size:0.82rem;color:rgba(255,255,255,0.7);font-weight:300}
+
+    .hero-photo{position:relative;overflow:hidden;display:flex;align-items:flex-end}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:95% 5%;display:block;opacity:0.95}
+    .hero-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--navy-deep) 0%,transparent 45%),linear-gradient(to top,var(--navy-deep) 0%,transparent 12%);z-index:1}
+
+    /* ── Section basics ── */
+    .section{padding:5.5rem 4rem}
+    .section-inner{max-width:1080px;margin:0 auto}
+    .section-label{font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.6rem}
+    .section-label::before{content:'';display:block;width:16px;height:1px;background:var(--blue-accent)}
+    .section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,2.5vw,2.6rem);color:var(--navy);line-height:1.12;margin-bottom:0.8rem}
+    .section-intro{font-size:0.9rem;line-height:1.9;color:var(--muted);font-weight:300;max-width:580px;margin-bottom:3rem}
+
+    /* ── Schwerpunkte ── */
+    .schwerpunkte{background:var(--offwhite)}
+    .schwerpunkte-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .schwerpunkt-card{background:white;border:1px solid var(--border);border-radius:8px;padding:2.2rem;transition:all 0.25s;display:flex;flex-direction:column;position:relative;overflow:hidden}
+    .schwerpunkt-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:transparent;transition:background 0.25s}
+    .schwerpunkt-card:hover{border-color:transparent;box-shadow:0 12px 40px rgba(15,32,68,0.1)}
+    .schwerpunkt-card:hover::before{background:var(--gold)}
+    .schwerpunkt-num{font-size:0.68rem;font-weight:500;letter-spacing:0.18em;color:var(--gold);margin-bottom:1rem;text-transform:uppercase}
+    .schwerpunkt-card h3{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--navy);margin-bottom:0.8rem;line-height:1.2}
+    .schwerpunkt-card p{font-size:0.84rem;line-height:1.8;color:var(--muted);font-weight:300;margin-bottom:1.6rem;flex:1}
+    .schwerpunkt-links{list-style:none;display:flex;flex-direction:column;gap:0.35rem;border-top:1px solid var(--border);padding-top:1.2rem;margin-top:auto}
+    .schwerpunkt-links a{font-size:0.8rem;color:var(--navy);text-decoration:none;padding:0.15rem 0;opacity:0.65;transition:opacity 0.15s;display:flex;align-items:center;gap:0.4rem}
+    .schwerpunkt-links a::before{content:'→';opacity:0.4;font-size:0.75rem}
+    .schwerpunkt-links a:hover{opacity:1}
+
+    /* ── Grundsätze (navy bg) ── */
+    .grundsaetze{background:var(--navy);padding:5.5rem 4rem}
+    .grundsaetze .section-label{color:var(--gold)}
+    .grundsaetze .section-label::before{background:var(--gold)}
+    .grundsaetze .section-title{color:white}
+    .grundsaetze-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+    .grundsaetze-text p{font-size:0.92rem;line-height:1.9;color:rgba(255,255,255,0.55);font-weight:300;margin-bottom:1rem}
+    .grundsaetze-text a{font-size:0.84rem;color:var(--gold);font-weight:400;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3);transition:border-color 0.2s;padding-bottom:1px}
+    .grundsaetze-text a:hover{border-bottom-color:var(--gold)}
+    .grundsaetze-list{list-style:none;display:flex;flex-direction:column;gap:0}
+    .grundsatz-item{display:flex;gap:1.5rem;align-items:flex-start;padding:1.6rem 0;border-bottom:1px solid rgba(255,255,255,0.07)}
+    .grundsatz-item:first-child{padding-top:0}
+    .grundsatz-item:last-child{border-bottom:none}
+    .grundsatz-num{font-family:'DM Serif Display',serif;font-size:2rem;color:rgba(255,255,255,0.08);flex-shrink:0;width:40px;line-height:1;margin-top:-0.2rem}
+    .grundsatz-body h4{font-family:'DM Serif Display',serif;font-size:1rem;color:white;margin-bottom:0.3rem}
+    .grundsatz-body p{font-size:0.82rem;line-height:1.7;color:rgba(255,255,255,0.45);font-weight:300}
+
+    /* ── Situationen ── */
+    .situationen{background:white}
+    .situationen-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+    .situation-card{background:white;padding:2.2rem;transition:background 0.2s;text-decoration:none;display:block}
+    .situation-card:hover{background:var(--offwhite)}
+    .situation-tag{font-size:0.66rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;display:block}
+    .situation-card h4{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--navy);margin-bottom:0.4rem;line-height:1.25}
+    .situation-context{font-size:0.75rem;color:var(--muted);font-style:italic;margin-bottom:0.8rem;display:block;font-weight:300}
+    .situation-card p{font-size:0.83rem;line-height:1.75;color:var(--muted);font-weight:300;margin-bottom:1rem}
+    .situation-link{font-size:0.78rem;color:var(--navy);font-weight:500;opacity:0.5}
+
+    /* ── Timeline Banner ── */
+    .timeline-banner{background:var(--navy-deep);padding:4rem 4rem;border-top:1px solid rgba(255,255,255,0.05)}
+    .timeline-inner{max-width:1080px;margin:0 auto}
+    .timeline-eyebrow{font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem}
+    .timeline-eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--gold)}
+    .timeline-banner > .timeline-inner > p{font-size:0.88rem;line-height:1.9;color:rgba(255,255,255,0.45);font-weight:300;max-width:640px;margin-bottom:3rem}
+    .timeline-track{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;border-top:1px solid rgba(255,255,255,0.1);padding-top:2rem}
+    .timeline-node{position:relative;padding-right:2rem}
+    .timeline-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.2);margin-bottom:1rem;position:relative;top:-2.65rem}
+    .timeline-node.active .timeline-dot{background:var(--gold);border-color:var(--gold)}
+    .timeline-date{font-size:0.7rem;font-weight:500;color:rgba(255,255,255,0.35);margin-bottom:0.3rem;letter-spacing:0.06em}
+    .timeline-node.active .timeline-date{color:var(--gold)}
+    .timeline-place{font-size:0.88rem;color:rgba(255,255,255,0.5);line-height:1.5;font-weight:300}
+    .timeline-node.active .timeline-place{color:white}
+
+    /* ── Technik ── */
+    .technik{background:var(--offwhite)}
+    .technik-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+    .technik-item{background:white;padding:1.8rem;transition:background 0.2s}
+    .technik-item:hover{background:var(--offwhite)}
+    .technik-num{font-size:0.65rem;color:var(--gold);font-weight:500;letter-spacing:0.12em;margin-bottom:0.8rem}
+    .technik-item h4{font-family:'DM Serif Display',serif;font-size:0.95rem;color:var(--navy);margin-bottom:0.4rem;line-height:1.3}
+    .technik-item p{font-size:0.8rem;line-height:1.7;color:var(--muted);font-weight:300}
+
+    /* ── Zweitmeinung CTA ── */
+    .zweitmeinung-cta{background:var(--navy);padding:5rem 4rem}
+    .zweitmeinung-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:3fr 1fr;gap:4rem;align-items:center}
+    .zweitmeinung-inner h2{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,2.2vw,2.4rem);color:white;line-height:1.15;margin-bottom:1rem}
+    .zweitmeinung-inner p{font-size:0.88rem;line-height:1.9;color:rgba(255,255,255,0.5);font-weight:300;margin-bottom:2rem}
+    .btn-gold{display:inline-block;background:var(--gold);color:var(--navy-deep);padding:1rem 2.2rem;font-size:0.84rem;font-weight:500;text-decoration:none;border-radius:3px;transition:background 0.2s;letter-spacing:0.02em}
+    .btn-gold:hover{background:#e8c97a}
+
+    /* ── Final CTA ── */
+    .final-cta{background:var(--offwhite);text-align:center;padding:6rem 4rem;border-top:1px solid var(--border)}
+    .final-cta-inner{max-width:520px;margin:0 auto}
+    .final-cta h2{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,2.2vw,2.4rem);color:var(--navy);margin-bottom:0.75rem;line-height:1.2}
+    .final-cta p{color:var(--muted);font-size:0.9rem;font-weight:300;line-height:1.75;margin-bottom:2rem}
+    .btn-navy{display:inline-block;background:var(--navy);color:white;padding:1rem 2.4rem;font-size:0.84rem;font-weight:500;text-decoration:none;border-radius:3px;transition:background 0.2s;letter-spacing:0.02em}
+    .btn-navy:hover{background:var(--navy-mid)}
+
+    /* ── Footer ── */
+    footer{background:var(--navy-deep);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    footer p{font-size:0.73rem;color:rgba(255,255,255,0.25);margin:0}
+    .footer-links{display:flex;gap:1.5rem;list-style:none}
+    .footer-links a{font-size:0.73rem;color:rgba(255,255,255,0.25);text-decoration:none;transition:color 0.2s}
+    .footer-links a:hover{color:var(--gold)}
+
+    /* ── Doctolib ── */
+    .doctolib-widget{position:fixed;bottom:2rem;right:2rem;z-index:998}
+    .doctolib-widget a{display:flex;align-items:center;gap:0.6rem;background:var(--navy);color:#fff;text-decoration:none;padding:0.75rem 1.2rem;border-radius:4px;box-shadow:0 4px 20px rgba(15,32,68,0.35);transition:background 0.2s}
+    .doctolib-widget a:hover{background:var(--navy-mid)}
+    .doctolib-widget .btn-label{font-size:0.78rem;font-weight:500;letter-spacing:0.04em}
+    .doctolib-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+    /* ── Responsive ── */
+    @media(max-width:1200px) and (min-width:961px){
+      .home-hero{grid-template-columns:1fr 480px}
+      nav{padding:0 2rem}
+      .hero-content{padding:calc(68px + 4rem) 2.5rem 4rem}
+      .section,.grundsaetze,.technik,.zweitmeinung-cta,.final-cta,.timeline-banner{padding:4.5rem 2.5rem}
+    }
+
+    @media(max-width:960px){
+      nav{padding:0 1.5rem}
+      .nav-links{display:none}
+      .nav-links.open{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(255,255,255,0.98);padding:1.5rem 2rem;gap:0.75rem;box-shadow:0 4px 20px rgba(0,0,0,0.1);border-top:1px solid var(--border);z-index:999;max-height:calc(100vh - 68px);overflow-y:auto}
+      .nav-links.open .nav-submenu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding:0.4rem 0 0.4rem 1rem;background:transparent}
+      .nav-toggle{display:flex}
+      .home-hero{grid-template-columns:1fr;min-height:100svh;position:relative}
+      .hero-photo{position:absolute;inset:0;display:block;z-index:0}
+      .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:70% 5%;opacity:0.5}
+      .hero-photo::before{background:linear-gradient(to bottom, var(--navy-deep) 0%, rgba(9,21,48,0.5) 50%, var(--navy-deep) 100%)}
+      .hero-content{position:relative;z-index:1;padding:calc(68px + 3rem) 2rem 3rem;max-width:600px}
+      .hero-credentials{flex-wrap:wrap;gap:1rem}
+      .section,.grundsaetze,.technik,.zweitmeinung-cta,.final-cta,.timeline-banner{padding:3.5rem 1.5rem}
+      .schwerpunkte-grid{grid-template-columns:1fr 1fr}
+      .technik-grid{grid-template-columns:1fr 1fr}
+      .grundsaetze-wrap{grid-template-columns:1fr;gap:2.5rem}
+      .situationen-grid{grid-template-columns:1fr 1fr}
+      .zweitmeinung-inner{grid-template-columns:1fr;gap:0}
+      .zweitmeinung-aside{display:none}
+      .timeline-track{grid-template-columns:1fr;gap:1.5rem;border-top:none;padding-top:0}
+      .timeline-dot{top:0;margin-bottom:0.5rem}
+      footer{flex-direction:column;padding:1.5rem;text-align:center}
+      .doctolib-widget{bottom:1rem;right:1rem}
+    }
+
+    @media(max-width:600px){
+      .home-hero{min-height:100svh}
+      .hero-content{padding:calc(68px + 2rem) 1.25rem 2.5rem}
+      .hero-content h1{font-size:2.6rem}
+      .hero-actions{flex-direction:column;align-items:flex-start;gap:0.75rem}
+      .hero-credentials{display:none}
+      .schwerpunkte-grid,.technik-grid,.situationen-grid{grid-template-columns:1fr}
+      .section,.grundsaetze,.technik,.zweitmeinung-cta,.final-cta,.timeline-banner{padding:2.5rem 1.25rem}
+      .footer-links{flex-direction:column;gap:0.75rem;align-items:center}
+    }
+  </style>
+  <link rel="canonical" href="https://www.mosafer-spine.de/">
+</head>
+<body>
+
+<div class="doctolib-widget">
+  <a href="https://doctolib.de/praxis/vogtareuth/wirbelsaeulen-und-skoliosezentrum-dr-med-mostafa-mosafer" target="_blank" rel="noopener">
+    <span class="doctolib-dot"></span>
+    <span class="btn-label">Termin buchen</span>
+  </a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <img src="uploads/logo.png" alt="Mosafer Spine" class="nav-logo-img">
+  </a>
+
+  <button class="nav-toggle" aria-label="Menü öffnen" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="nav-links">
+    <li>
+      <a href="#">Skoliose</a>
+      <ul class="nav-submenu">
+        <li><a href="skoliose/erstdiagnose.html">Erstdiagnose &amp; Cobb-Winkel</a></li>
+        <li><a href="skoliose/krankengymnastik.html">Krankengymnastik &amp; Schroth</a></li>
+        <li><a href="skoliose/korsett-therapie.html">Korsett-Therapie</a></li>
+        <li><a href="skoliose/operative-behandlung.html">Operative Behandlung</a></li>
+        <li><a href="skoliose/vbt.html">VBT (Tethering)</a></li>
+        <li><a href="skoliose/magec-rods.html">MAGEC-Stäbe</a></li>
+        <li><a href="skoliose/nemost.html">NEMOST</a></li>
+        <li><a href="skoliose/erwachsenenskoliose.html">Erwachsenenskoliose</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Wirbelsäulenchirurgie</a>
+      <ul class="nav-submenu">
+        <li><a href="wirbelsaeulenchirurgie/bandscheibenvorfall.html">Bandscheibenvorfall</a></li>
+        <li><a href="wirbelsaeulenchirurgie/spinalkanalstenose.html">Spinalkanalstenose</a></li>
+        <li><a href="wirbelsaeulenchirurgie/minimalinvasiv.html">Minimalinvasiv</a></li>
+        <li><a href="wirbelsaeulenchirurgie/dynamische-stabilisation.html">Dynamische Stabilisation (PEEK)</a></li>
+        <li><a href="wirbelsaeulenchirurgie/revision.html">Revision</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Konservativ</a>
+      <ul class="nav-submenu">
+        <li><a href="konservativ/prp-acp.html">PRP &amp; ACP</a></li>
+        <li><a href="konservativ/prt-facettengelenksinfiltration.html">PRT &amp; Facetteninfiltration</a></li>
+        <li><a href="konservativ/stosswellentherapie.html">Stoßwellentherapie</a></li>
+      </ul>
+    </li>
+    <li><a href="skoliose/zweitmeinung.html">Zweitmeinung</a></li>
+    <li><a href="praxis/ueber-dr-mosafer.html">Über</a></li>
+    <li><a href="patienten/international.html">International</a></li>
+    <li><a href="#termin" class="nav-cta">Termin</a></li>
+  </ul>
+</nav>
+
+<section class="home-hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Dr. Mostafa Mosafer · Rosenheim</p>
+    <h1>Wirbelsäule<br>und Skoliose –<br><em>namentliche<br>Expertise.</em></h1>
+    <p class="hero-sub">Spezialisierte Praxis für Skoliose, komplexe Wirbelsäulenchirurgie und Revisionseingriffe. Persönliche Betreuung vom Erstgespräch bis zur Langzeit-Nachsorge.</p>
+    <div class="hero-actions">
+      <a href="#termin" class="btn-primary">Termin vereinbaren</a>
+      <a href="skoliose/zweitmeinung.html" class="btn-ghost">Zweitmeinung anfragen →</a>
+    </div>
+    <div class="hero-credentials">
+      <div class="cred-item">
+        <span class="cred-label">Schwerpunkt</span>
+        <span class="cred-value">Skoliose &amp; Wirbelsäulendeformitäten</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="uploads/foto.jpeg" alt="Dr. Mostafa Mosafer – Wirbelsäulenchirurg">
+  </div>
+</section>
+
+<section class="section schwerpunkte">
+  <div class="section-inner">
+    <p class="section-label">Behandlungsschwerpunkte</p>
+    <h2 class="section-title">Strukturiert nach<br>Ihrem Anliegen.</h2>
+    <p class="section-intro">Drei klinische Schwerpunkte, eine durchgehende Betreuung. Jeder Weg führt zu ausführlichen Fachseiten mit realistischen Einordnungen.</p>
+    <div class="schwerpunkte-grid">
+      <div class="schwerpunkt-card">
+        <p class="schwerpunkt-num">01 · Skoliose</p>
+        <h3>Skoliose &amp; Wirbelsäulen­deformitäten</h3>
+        <p>Von der Erstdiagnose über Schroth und Korsett bis zur operativen Korrektur – für Jugendliche, Erwachsene und Kinder mit wachstumslenkenden Systemen.</p>
+        <ul class="schwerpunkt-links">
+          <li><a href="skoliose/erstdiagnose.html">Erstdiagnose &amp; Cobb-Winkel</a></li>
+          <li><a href="skoliose/korsett-therapie.html">Korsett-Therapie</a></li>
+          <li><a href="skoliose/magec-rods.html">MAGEC &amp; NEMOST</a></li>
+          </ul>
+      </div>
+      <div class="schwerpunkt-card">
+        <p class="schwerpunkt-num">02 · Chirurgie</p>
+        <h3>Wirbelsäulen­chirurgie</h3>
+        <p>Bandscheibenvorfall, Spinalkanalstenose, minimalinvasive Fusion (TLIF/XLIF/OLIF), PEEK-Stab und spezialisierte Revisionseingriffe – konservativ, wenn möglich; operativ, wenn nötig.</p>
+        <ul class="schwerpunkt-links">
+          <li><a href="wirbelsaeulenchirurgie/bandscheibenvorfall.html">Bandscheibenvorfall</a></li>
+          <li><a href="wirbelsaeulenchirurgie/spinalkanalstenose.html">Spinalkanalstenose</a></li>
+          <li><a href="wirbelsaeulenchirurgie/minimalinvasiv.html">Minimalinvasive Technik</a></li>
+          <li><a href="wirbelsaeulenchirurgie/dynamische-stabilisation.html">Dynamische Stabilisation (PEEK)</a></li>
+          <li><a href="wirbelsaeulenchirurgie/revision.html">Revisionschirurgie</a></li>
+        </ul>
+      </div>
+      <div class="schwerpunkt-card">
+        <p class="schwerpunkt-num">03 · Konservativ</p>
+        <h3>Konservative &amp; biologische Therapie</h3>
+        <p>Bildgesteuerte Injektionen (PRT, Facettengelenk), biologische Verfahren (PRP/ACP) und Stoßwellentherapie – gezielt eingesetzt bei klarer Indikation.</p>
+        <ul class="schwerpunkt-links">
+          <li><a href="konservativ/prt-facettengelenksinfiltration.html">PRT &amp; Facetteninfiltration</a></li>
+          <li><a href="konservativ/prp-acp.html">PRP &amp; ACP</a></li>
+          <li><a href="konservativ/stosswellentherapie.html">Stoßwellentherapie</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grundsaetze">
+  <div class="section-inner">
+    <div class="grundsaetze-wrap">
+      <div class="grundsaetze-text">
+        <p class="section-label">Arbeitsweise</p>
+        <h2 class="section-title">Drei Grundsätze,<br>die unsere Arbeit prägen.</h2>
+        <p>Die Wirbelsäule ist ein eigenes Feld. Spezialisierung ist die Voraussetzung für Qualität – gerade bei komplexen Deformitäten und Revisionen.</p>
+        <p>Wir operieren nicht, um zu operieren. Und wir operieren dann, wenn es nachweislich das beste langfristige Ergebnis bringt – mit modernen, evidenzbasierten Verfahren.</p>
+        <br>
+        <a href="praxis/ueber-dr-mosafer.html">Mehr über Dr. Mosafer →</a>
+      </div>
+      <ul class="grundsaetze-list">
+        <li class="grundsatz-item">
+          <span class="grundsatz-num">01</span>
+          <div class="grundsatz-body">
+            <h4>Konservativ zuerst</h4>
+            <p>Operation erst, wenn strukturierte Alternativen ausgeschöpft sind.</p>
+          </div>
+        </li>
+        <li class="grundsatz-item">
+          <span class="grundsatz-num">02</span>
+          <div class="grundsatz-body">
+            <h4>Ehrliche Aufklärung</h4>
+            <p>Klare Darstellung von Alternativen, Grenzen und realistischen Ergebnissen.</p>
+          </div>
+        </li>
+        <li class="grundsatz-item">
+          <span class="grundsatz-num">03</span>
+          <div class="grundsatz-body">
+            <h4>Persönliche Führung</h4>
+            <p>Durchgehende Betreuung durch Dr. Mosafer, nicht durch wechselnde Teams.</p>
+          </div>
+        </li>
+        <li class="grundsatz-item">
+          <span class="grundsatz-num">04</span>
+          <div class="grundsatz-body">
+            <h4>Lange Nachsorge</h4>
+            <p>Systematisch über mindestens 12 Monate; bei Kindern über viele Jahre.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section situationen">
+  <div class="section-inner">
+    <p class="section-label">Für spezifische Situationen</p>
+    <h2 class="section-title">Zielgerichtete<br>Einstiegspunkte.</h2>
+    <p class="section-intro">Manche Anliegen sind kein klassischer Fachbereich, sondern eine konkrete Situation. Dafür gibt es eigene, detaillierte Seiten.</p>
+    <div class="situationen-grid">
+      <a href="skoliose/zweitmeinung.html" class="situation-card">
+        <span class="situation-tag">Zweitmeinung</span>
+        <h4>Ich habe eine OP-Empfehlung bekommen.</h4>
+        <span class="situation-context">Strukturierte unabhängige Einschätzung</span>
+        <p>Strukturierte unabhängige Zweitmeinung zu einer vorgeschlagenen Wirbelsäulen- oder Skoliose-OP – mit den 24 Fragen, die wirklich zählen.</p>
+        <span class="situation-link">→ Zur Zweitmeinung</span>
+      </a>
+      <a href="patienten/international.html" class="situation-card">
+        <span class="situation-tag">International</span>
+        <h4>I am travelling to Germany for care.</h4>
+        <span class="situation-context">English · عربي · فارسی</span>
+        <p>Strukturierte, mehrsprachige Begleitung für internationale Patienten – Vorab-Begutachtung, Video-Zweitmeinung und langfristige Video-Nachsorge.</p>
+        <span class="situation-link">→ International patients</span>
+      </a>
+      <a href="patienten/privatpatienten.html" class="situation-card">
+        <span class="situation-tag">Privat &amp; Selbstzahler</span>
+        <h4>Informationen für Privatpatienten.</h4>
+        <span class="situation-context">GOÄ · PKV · Beihilfe</span>
+        <p>GOÄ-Abrechnung, Kostenvoranschläge, Wahlarztleistungen, Koordination mit PKV und Beihilfe – transparent und ohne Marketing-Pathos.</p>
+        <span class="situation-link">→ Privatpatienten-Infos</span>
+      </a>
+      <a href="praxis/nachsorge.html" class="situation-card">
+        <span class="situation-tag">Nachsorge</span>
+        <h4>Nach einer Wirbelsäulen-OP.</h4>
+        <span class="situation-context">Auch bei OP andernorts</span>
+        <p>Strukturierter Nachsorgeplan, Reha-Empfehlungen, Narbenpflege, Sport-Wiederaufnahme – auch wenn die OP andernorts stattgefunden hat.</p>
+        <span class="situation-link">→ Nachsorge-Plan</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="section technik">
+  <div class="section-inner">
+    <p class="section-label">Technik &amp; Standards</p>
+    <h2 class="section-title">Modern, wo Technik hilft.<br>Zurückhaltend, wo sie nur Marketing ist.</h2>
+    <p class="section-intro">Eingesetzt dort, wo Technologie das Ergebnis für die Patientin oder den Patienten nachweislich verbessert.</p>
+    <div class="technik-grid">
+      <div class="technik-item">
+        <p class="technik-num">01</p>
+        <h4>Intraoperative 3D-Navigation</h4>
+        <p>Millimetergenaue Schrauben- und Implantatplatzierung – besonders wichtig bei Deformitäten und Revisionseingriffen.</p>
+      </div>
+      <div class="technik-item">
+        <p class="technik-num">02</p>
+        <h4>Neuromonitoring</h4>
+        <p>Kontinuierliche Überwachung der Nervenfunktion während aller komplexen Eingriffe an der Wirbelsäule.</p>
+      </div>
+      <div class="technik-item">
+        <p class="technik-num">03</p>
+        <h4>Minimalinvasive Verfahren</h4>
+        <p>TLIF, XLIF, OLIF und endoskopische Techniken, wo sie medizinisch überlegen sind – nicht reflexhaft.</p>
+      </div>
+      <div class="technik-item">
+        <p class="technik-num">04</p>
+        <h4>Wachstumslenkende Systeme</h4>
+        <p>Erfahrung mit MAGEC und NEMOST bei Early-Onset-Skoliose – Indikationsstellung und Langzeitführung.</p>
+      </div>
+      <div class="technik-item">
+        <p class="technik-num">05</p>
+        <h4>Bildgesteuerte Injektionen</h4>
+        <p>PRT, Facettengelenk und epidurale Injektionen unter Fluoroskopie oder CT – keine „blinden" Spritzen.</p>
+      </div>
+      <div class="technik-item">
+        <p class="technik-num">06</p>
+        <h4>Strukturierte Nachsorge</h4>
+        <p>Systematische klinisch-radiologische Kontrollen über 12 Monate und darüber hinaus, für inländische wie internationale Patienten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zweitmeinung-cta">
+  <div class="zweitmeinung-inner">
+    <div>
+      <h2>Strukturierte Zweitmeinung<br>bei OP-Empfehlung.</h2>
+      <p>Wenn Ihnen eine Wirbelsäulen- oder Skoliose-Operation empfohlen wurde, prüfen wir die Indikation strukturiert mit den 24 Fragen, die in dieser Situation wirklich zählen – unabhängig, ohne Marketing, mit klarer Einordnung der Alternativen.</p>
+      <a href="skoliose/zweitmeinung.html" class="btn-gold">Zur Zweitmeinung</a>
+    </div>
+    <div class="zweitmeinung-aside"></div>
+  </div>
+</section>
+
+<section id="termin" class="final-cta">
+  <div class="final-cta-inner">
+    <h2>Termin oder Zweitmeinung –<br>direkt an Dr. Mosafer.</h2>
+    <p>Für Erstgespräche, Zweitmeinungen und Verlaufskontrollen. Unterlagen können vorab digital eingereicht werden.</p>
+    <a href="https://doctolib.de/praxis/vogtareuth/wirbelsaeulen-und-skoliosezentrum-dr-med-mostafa-mosafer" target="_blank" class="btn-navy">Jetzt Termin vereinbaren →</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Mosafer Spine · Dr. Mostafa Mosafer</p>
+  <ul class="footer-links">
+    <li><a href="en/home.html">English · International patients</a></li>
+    <li><a href="datenschutz.html">Datenschutz</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

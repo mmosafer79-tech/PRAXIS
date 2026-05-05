@@ -1,0 +1,29 @@
+SEO Fix Log — mosafer-spine.de
+Datum: 2026-05-04
+Geänderte Dateien: 25
+
+datenschutz.html: Fix1: canonical=https://www.mosafer-spine.de/datenschutz.html | Fix2: description inserted (139 chars)
+en/home.html: Fix1: canonical=https://www.mosafer-spine.de/en/home.html
+impressum.html: Fix1: canonical=https://www.mosafer-spine.de/impressum.html | Fix2: description inserted (130 chars)
+index.html: Fix1: canonical=https://www.mosafer-spine.de/ | Fix2: description updated (107→166 chars)
+konservativ/prp-acp.html: Fix1: canonical=https://www.mosafer-spine.de/konservativ/prp-acp.html | Fix2: description updated (89→162 chars)
+konservativ/prt-facettengelenksinfiltration.html: Fix1: canonical=https://www.mosafer-spine.de/konservativ/prt-facettengelenksinfiltration.html | Fix2: description updated (97→165 chars)
+konservativ/stosswellentherapie.html: Fix1: canonical=https://www.mosafer-spine.de/konservativ/stosswellentherapie.html | Fix2: description updated (93→150 chars)
+patienten/international.html: Fix1: canonical=https://www.mosafer-spine.de/patienten/international.html
+patienten/privatpatienten.html: Fix1: canonical=https://www.mosafer-spine.de/patienten/privatpatienten.html | Fix2: description updated (93→154 chars)
+praxis/nachsorge.html: Fix1: canonical=https://www.mosafer-spine.de/praxis/nachsorge.html | Fix2: description updated (90→160 chars)
+praxis/ueber-dr-mosafer.html: Fix1: canonical=https://www.mosafer-spine.de/praxis/ueber-dr-mosafer.html | Fix2: description updated (84→151 chars)
+skoliose/erstdiagnose.html: Fix1: canonical=https://www.mosafer-spine.de/skoliose/erstdiagnose.html | Fix2: description updated (107→151 chars)
+skoliose/erwachsenenskoliose.html: Fix1: canonical=https://www.mosafer-spine.de/skoliose/erwachsenenskoliose.html | Fix2: description updated (102→155 chars)
+skoliose/korsett-therapie.html: Fix1: canonical=https://www.mosafer-spine.de/skoliose/korsett-therapie.html | Fix2: description updated (92→144 chars)
+skoliose/krankengymnastik.html: Fix1: canonical=https://www.mosafer-spine.de/skoliose/krankengymnastik.html | Fix2: description updated (92→163 chars)
+skoliose/magec-rods.html: Fix1: canonical=https://www.mosafer-spine.de/skoliose/magec-rods.html | Fix2: description updated (95→167 chars)
+skoliose/nemost.html: Fix1: canonical=https://www.mosafer-spine.de/skoliose/nemost.html | Fix2: description updated (95→151 chars)
+skoliose/operative-behandlung.html: Fix1: canonical=https://www.mosafer-spine.de/skoliose/operative-behandlung.html | Fix2: description updated (95→163 chars)
+skoliose/vbt.html: Fix1: canonical=https://www.mosafer-spine.de/skoliose/vbt.html | Fix2: description updated (102→149 chars)
+skoliose/zweitmeinung.html: Fix1: canonical=https://www.mosafer-spine.de/skoliose/zweitmeinung.html | Fix2: description updated (109→155 chars)
+wirbelsaeulenchirurgie/bandscheibenvorfall.html: Fix1: canonical=https://www.mosafer-spine.de/wirbelsaeulenchirurgie/bandscheibenvorfall.html | Fix2: description updated (96→153 chars)
+wirbelsaeulenchirurgie/dynamische-stabilisation.html: Fix1: canonical=https://www.mosafer-spine.de/wirbelsaeulenchirurgie/dynamische-stabilisation.html | Fix2: description updated (97→155 chars)
+wirbelsaeulenchirurgie/minimalinvasiv.html: Fix1: canonical=https://www.mosafer-spine.de/wirbelsaeulenchirurgie/minimalinvasiv.html | Fix2: description updated (84→156 chars)
+wirbelsaeulenchirurgie/revision.html: Fix1: canonical=https://www.mosafer-spine.de/wirbelsaeulenchirurgie/revision.html | Fix2: description updated (80→158 chars)
+wirbelsaeulenchirurgie/spinalkanalstenose.html: Fix1: canonical=https://www.mosafer-spine.de/wirbelsaeulenchirurgie/spinalkanalstenose.html | Fix2: description updated (88→157 chars)

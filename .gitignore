@@ -1,0 +1,20 @@
+# System
+.DS_Store
+Thumbs.db
+
+# Backups
+backup_seo/
+
+# Screenshots (nur lokal)
+screenshots/
+
+# Rohdateien
+uploads/*.pdf
+uploads/logo-view.html
+uploads/logo-dark.jpg
+uploads/logo-screenshot.jpg
+uploads/Bildschirmfoto*
+
+# Alte Versionen
+index-v2.html
+"Mosafer Spine - Startseite.html"
