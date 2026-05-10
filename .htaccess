@@ -1,0 +1,12 @@
+# ─────────────────────────────────────────────
+# mosafer-spine.de — Apache Konfiguration
+# Kanonische Domain: https://www.mosafer-spine.de
+# ─────────────────────────────────────────────
+
+RewriteEngine On
+
+# Alle Varianten auf https://www. weiterleiten (301 permanent)
+# Betrifft: http://, https://, non-www, www ohne HTTPS
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\.mosafer-spine\.de$ [NC]
+RewriteRule ^ https://www.mosafer-spine.de%{REQUEST_URI} [R=301,L]
