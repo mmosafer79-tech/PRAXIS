@@ -5,11 +5,14 @@
 
 AddDefaultCharset UTF-8
 
+# Hinweis: env=HTTPS liefert bei vielen Hostern kein HSTS (Scanner zeigt „fehlt“).
+# REQUEST_SCHEME == https setzt HSTS nur auf TLS-Antworten (Apache 2.4+).
 <IfModule mod_headers.c>
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" "expr=%{REQUEST_SCHEME} == 'https'"
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
 </IfModule>
 
 RewriteEngine On
