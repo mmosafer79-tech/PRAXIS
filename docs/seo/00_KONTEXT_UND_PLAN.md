@@ -134,10 +134,10 @@ Der Plan setzt sich aus 2 parallelen Säulen zusammen:
 - [ ] Server-Spike 12.05. (6.590 ms) mit Strato klären
 - [ ] Jameda-Profil anlegen
 - [ ] Online-Validatoren-Check: Rich Results, Open Graph, hreflang, securityheaders.com
-- [x] BreadcrumbList Schema auf 8 Subseiten (WS-Chirurgie + Konservativ) ✅ Spur 2, 17.05. vormittag
+- [x] BreadcrumbList Schema auf ALLE 21 Subseiten ✅ Spur 2 (zwei Runden), 17.05. vor-/mittags
 - [x] Person/Physician Schema auf `/praxis/ueber-dr-mosafer.html` ✅ Spur 2, 17.05. vormittag
+- [x] MedicalClinic Schema auf `/en/home.html` (englisch, internationale Patienten) ✅ Spur 2 Runde 2
 - [x] Internal Linking Body-Content auf 9 Seiten (12 contextual Links gesetzt) ✅ Spur 2, 17.05. vormittag
-- [ ] BreadcrumbList auf restliche 14 Subseiten (`skoliose/*`, `patienten/*`, `praxis/nachsorge.html`, `en/home.html`)
 
 ### Phase 2 — MONAT 1 (offen)
 - [ ] Pillar Page #1 „skoliose-spezialist.html" (3.500+ Wörter) — Briefing in 02_PILLAR_PAGE_1_BRIEFING.md
@@ -161,6 +161,9 @@ Der Plan setzt sich aus 2 parallelen Säulen zusammen:
 | Signal | Status | Verifikation |
 |---|---|---|
 | Schema-Markup Startseite | ✅ live | Rich Results Test |
+| BreadcrumbList Schema | ✅ live auf 22 Subseiten | Rich Results Test |
+| Person Schema (Dr. Mosafer) | ✅ live auf Über-Seite | Rich Results Test |
+| MedicalClinic Schema | ✅ live auf en/home.html | Rich Results Test |
 | OG-Tags 23 Seiten | ✅ live | opengraph.xyz |
 | hreflang DE/EN | ✅ live | im HTML head |
 | Security Headers | ✅ live | securityheaders.com |

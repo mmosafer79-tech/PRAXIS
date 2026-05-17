@@ -149,6 +149,14 @@ Beide Sessions führen am Ende ihrer Arbeit folgendes Update in `00_KONTEXT_UND_
 | Zeitpunkt | Session | Aufgabe | Status |
 |---|---|---|---|
 | 17.05. 03:00 | beide | Phase 0 abgeschlossen | ✅ |
-| 17.05. 12:30 | Cursor (Spur 2) | BreadcrumbList Schema auf 8 Subseiten + Person Schema + 12 contextual Internal Links | ✅ |
-| 17.05. ? | Claude Code (Spur 1) | Pillar Page #1 `skoliose-spezialist.html` | ⏳ in Arbeit |
+| 17.05. 12:30 | Cursor (Spur 2 Runde 1) | BreadcrumbList Schema auf 8 Subseiten + Person Schema + 12 contextual Internal Links | ✅ |
+| 17.05. 12:55 | Cursor (Spur 2 Runde 2) | BreadcrumbList Schema auf 12 weitere Seiten + MedicalClinic Schema auf en/home.html | ✅ |
+| 17.05. 12:55+ | Claude Code (Spur 1) | Pillar Page #1 `skoliose-spezialist.html` | ⏳ läuft |
 | | | | |
+
+### Komplette Schema-Coverage (Stand 17.05. 13:00)
+
+22 von 23 Seiten haben jetzt JSON-LD Schema. Einzige Seite ohne Schema:
+- `impressum.html` / `datenschutz.html` — bewusst keins (rechtliche Pflichtseiten, kein SEO-Wert)
+
+Plus: Homepage hat MedicalBusiness+Physician (Phase 0), Über-Seite hat zusätzlich Person, EN-Homepage hat zusätzlich MedicalClinic.
