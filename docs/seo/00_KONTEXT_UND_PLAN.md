@@ -1,6 +1,6 @@
 # Mosafer Spine — SEO Projekt-Kontext & Plan (Konsolidiert)
 
-**Stand:** 17.05.2026
+**Stand:** 17.05.2026 (vormittags — nach Phase 0 Abschluss)
 **Projekt-Owner:** Dr. Mostafa Mosafer
 **Domain:** https://www.mosafer-spine.de
 **Standort aktuell:** Krankenhausstraße 20, 83569 Vogtareuth
@@ -115,25 +115,37 @@ Der Plan setzt sich aus 2 parallelen Säulen zusammen:
 
 ## 8. Offene Punkte / Next Actions (priorisiert)
 
-### Diese Woche
-- [ ] Strato-Passwort rotieren
-- [ ] 301-Redirect-Quellen identifizieren und auflösen
-- [ ] 404 fixen
-- [ ] Charset UTF-8 in .htaccess
+### Phase 0 — ERLEDIGT (Nacht 17.05.2026)
+- [x] Charset UTF-8 in .htaccess
+- [x] LocalBusiness + Physician Schema auf Startseite (Commit a3417ee)
+- [x] OG-Tags global auf 23 Seiten
+- [x] hreflang DE/EN/x-default
+- [x] llms.txt
+- [x] Security Headers (HSTS, X-Frame, X-Content-Type, Referrer-Policy)
+- [x] docs/seo/ Schutz vor öffentlichem Zugriff (403 verified)
+- [x] Strato-Deploy live
+- [x] GSC manuelle Indexierung für 5 Hauptseiten angefordert
+- [x] Single Source of Truth in docs/seo/ etabliert
+
+### Phase 1 — DIESE WOCHE (offen)
+- [ ] Strato-Passwort rotieren (war in deploy-Script sichtbar)
+- [ ] 301-Redirect-Quellen in GSC identifizieren und auflösen (23,33 % Crawl-Budget verbrannt)
+- [ ] Den einen 404 in GSC fixen
+- [ ] Server-Spike 12.05. (6.590 ms) mit Strato klären
 - [ ] Jameda-Profil anlegen
-- [ ] LocalBusiness + Physician Schema auf Startseite
+- [ ] Online-Validatoren-Check: Rich Results, Open Graph, hreflang, securityheaders.com
+- [ ] BreadcrumbList Schema auf 22 Subseiten ausrollen
+- [ ] Person/Physician Schema auf `/praxis/ueber-dr-mosafer.html`
+- [ ] Internal Linking im Body-Content (2–3 Links pro Seite)
 
-### Nächste 2 Wochen
-- [ ] OG-Tags global ausrollen
-- [ ] hreflang DE/EN
-- [ ] llms.txt
-- [ ] Security Headers
-- [ ] BreadcrumbList auf allen Subseiten
-- [ ] Internal Linking ausbauen (Body-Content-Links)
-
-### Monat 1
-- [ ] Pillar Page #1 „skoliose-spezialist" (3.500+ Wörter)
-- [ ] Top-5 thin Pages auf 700–1.000 Wörter ausbauen
+### Phase 2 — MONAT 1 (offen)
+- [ ] Pillar Page #1 „skoliose-spezialist.html" (3.500+ Wörter) — Briefing in 02_PILLAR_PAGE_1_BRIEFING.md
+- [ ] Top-5 thin Pages auf 700–1.000 Wörter ausbauen:
+  - `/skoliose/erstdiagnose.html` (433 → 900)
+  - `/wirbelsaeulenchirurgie/bandscheibenvorfall.html` (338 → 900)
+  - `/skoliose/operative-behandlung.html` (372 → 1.000)
+  - `/praxis/ueber-dr-mosafer.html` (240 → 700)
+  - `/patienten/international.html` (521 → 1.000)
 - [ ] Adresse Juli 2026 vorbereiten (Impressum/Datenschutz/Index)
 - [ ] Foto-Shooting Dr. Mosafer + Praxis
 
@@ -142,6 +154,19 @@ Der Plan setzt sich aus 2 parallelen Säulen zusammen:
 - [ ] Timeline-Banner wieder einbauen (Karriere-Wechsel)
 - [ ] Klinikum Traunstein Backlink anfragen
 - [ ] Munich Inquire Media Bewerbung Focus TOP-Mediziner
+
+## 9. Live-Status der Site (Stand 17.05.2026 03:00)
+
+| Signal | Status | Verifikation |
+|---|---|---|
+| Schema-Markup Startseite | ✅ live | Rich Results Test |
+| OG-Tags 23 Seiten | ✅ live | opengraph.xyz |
+| hreflang DE/EN | ✅ live | im HTML head |
+| Security Headers | ✅ live | securityheaders.com |
+| llms.txt | ✅ live | https://www.mosafer-spine.de/llms.txt |
+| docs/seo/ public-geschützt | ✅ 403 confirmed | direkter URL-Test |
+| Sitemap in GSC | ✅ erfolgreich, 23 Seiten | GSC Sitemaps |
+| Manuelle Indexierung | ✅ 5 URLs angefordert 17.05.2026 | GSC URL-Inspektion |
 
 ---
 
