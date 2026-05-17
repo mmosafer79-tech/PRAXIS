@@ -19,3 +19,6 @@ RewriteEngine On
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^www\.mosafer-spine\.de$ [NC]
 RewriteRule ^ https://www.mosafer-spine.de%{REQUEST_URI} [R=301,L]
+
+# Interne Dokumentation nicht öffentlich auslieferbar
+RewriteRule ^docs(/.*)?$ - [F,L]

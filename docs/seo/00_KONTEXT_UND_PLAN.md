@@ -1,0 +1,158 @@
+# Mosafer Spine — SEO Projekt-Kontext & Plan (Konsolidiert)
+
+**Stand:** 17.05.2026
+**Projekt-Owner:** Dr. Mostafa Mosafer
+**Domain:** https://www.mosafer-spine.de
+**Standort aktuell:** Krankenhausstraße 20, 83569 Vogtareuth
+**Standort ab Juli 2026:** Rosenheim (eigene Praxis Mosafer Spine)
+**Klinik-Affiliation ab August 2026:** Chefarzt Klinikum Traunstein (Kinderorthopädie & Skoliose)
+
+---
+
+## 1. Business-Kontext (verbindlich)
+
+### Karriere-Timeline
+- **Aktuell bis Juli 2026:** Chefarzt Schön Klinik Vogtareuth (Backlink NICHT möglich)
+- **Ab Juli 2026:** Eigene Praxis Mosafer Spine startet in Rosenheim
+- **Ab August 2026:** Chefarzt Klinikum Traunstein (Backlink **realistisch** — SEO-Hebel Q3/Q4 2026)
+
+### Spezialisierung & Brand
+- **Praxis-Untertitel:** „Skoliosezentrum Rosenheim" (nicht „Wirbelsäulenzentrum")
+- **Firmenname:** „Mosafer Spine"
+- **USP:** Namentlicher Skoliose-Spezialist (Hauptkonkurrent Orthozentrum.net Rosenheim: 9 Ärzte, **kein** Skoliose-Spezialist)
+- **Kernschwerpunkte:** Skoliose (Kinder + Erwachsene), VBT, MAGEC, NEMOST, Revision, minimalinvasiv, biologische Therapie (PRP/ACP)
+- **24-Fragen-Zweitmeinungs-Methode** als Trust-Anker
+
+### Zielgruppen
+- Primär: Privatpatienten, Selbstzahler, Beihilfeberechtigte
+- Sekundär: Internationale Patienten (DE/EN/AR/FA Site vorhanden)
+- Tonalität: ruhig, angstnehmend, nicht verkäuferisch — verunsicherte Familien
+
+## 2. Site-Status (Stand 2026-05-17)
+
+### Tech-Stack
+- Strato Hosting, SFTP-Deploy via `deploy-mosafer-spine.sh`
+- GitHub Repo: `github.com/mmosafer79-tech/PRAXIS` (privat)
+- **Git-Workflow Pflicht:** vor jedem Deployment committen
+- **23 HTML-Seiten** live (siehe Page-Inventory unten)
+- Static HTML/CSS, keine JS-Frameworks
+- Tracking: nur Google Search Console (kein Cookie-Banner nötig)
+
+### Deployment Credentials
+- Server: `5019296278.ssh.w2.strato.hosting`, Port 22, User `su765082`
+- Web-Root = `/`
+- Lokal: `/Users/mostafamosafer/Desktop/MOSAFER_SPINE_EXTRACTED`
+- ⚠️ **Strato-Passwort rotieren** — war in Session sichtbar
+
+## 3. Tool-Status
+
+| Tool | Status |
+|---|---|
+| Google Search Console | ✅ aktiv, Sitemap eingereicht 04.05.2026 |
+| Google Business Profile | ✅ existiert |
+| Jameda | ⏳ noch anzulegen |
+| Doctolib | ✅ integriert |
+| NotebookLM | ✅ Notebook „Mosafer Spine Content" mit 60 Quellen |
+| Nano Banana Pro MCP | ✅ für medizinische Illustrationen |
+| Ahrefs | ❌ **nicht empfohlen** — Sistrix Smart als günstigere DE-Alternative |
+
+## 4. GSC Crawl-Stats Analyse (10.–15.05.2026)
+
+| Metrik | Wert | Bewertung |
+|---|---|---|
+| Crawls / 6 Tage | 30 | ⚠️ Sehr niedrig |
+| Status 301 | **23,33 %** | 🚨 Kritisch — Crawl Budget verbrannt |
+| Status 404 | 3,33 % | ⚠️ Tote Links |
+| Avg. Antwortzeit | 294–466 ms | ✅ |
+| Spike 12.05. | 6.590 ms | 🚨 Server-Problem prüfen |
+| „Auffindbarkeit" | nur 13,33 % | 🚨 Google entdeckt kaum Neues |
+
+## 5. Page-Inventory (23 Seiten, alle mit nur 240–613 Wörtern — alle „thin")
+
+| URL | Wörter | Status |
+|---|---|---|
+| `/` | 613 | ✅ ok |
+| `/patienten/international.html` | 521 | ✅ ok |
+| `/skoliose/erstdiagnose.html` | 433 | ⚠️ thin |
+| `/skoliose/zweitmeinung.html` | 386 | ⚠️ thin |
+| `/skoliose/operative-behandlung.html` | 372 | ⚠️ thin |
+| `/wirbelsaeulenchirurgie/bandscheibenvorfall.html` | 338 | ⚠️ thin |
+| `/skoliose/vbt.html` | 322 | ⚠️ thin |
+| `/skoliose/korsett-therapie.html` | 315 | ⚠️ thin |
+| 15 weitere Seiten | 239–306 | ❌ very thin |
+
+**Durchschnitt: 318 Wörter/Seite** — für YMYL-Medizin viel zu wenig (Soll: 600–1.500).
+
+## 6. Top-10 priorisierte Suchanfragen
+
+| # | Suchanfrage | Intent | Priorität |
+|---|---|---|---|
+| 1 | skoliose spezialist kinder deutschland | Commercial | 10 |
+| 2 | zweitmeinung wirbelsäulen op | Commercial | 10 |
+| 3 | bester skoliose spezialist deutschland | Commercial | 9 |
+| 4 | skoliose op methoden vergleich (VBT vs. Fusion) | Commercial | 9 |
+| 5 | wirbelsäulenchirurg privatsprechstunde | Transactional | 9 |
+| 6 | skoliose behandlung ohne op | Informational | 8 |
+| 7 | skoliose op risiken und chancen | Informational | 8 |
+| 8 | korsett bei skoliose wirksamkeit | Informational | 7 |
+| 9 | kinderskoliose behandlung termin | Transactional | 7 |
+| 10 | orthopäde privatpraxis rosenheim | Commercial | 7 |
+
+## 7. Konsolidierter Aktionsplan (siehe 01_CROSS_CHECK.md für Details)
+
+Der Plan setzt sich aus 2 parallelen Säulen zusammen:
+
+### Säule A — Technisches Fundament (aus Claude-Code-Audit)
+- Charset UTF-8, Schema-Markup, OG-Tags, hreflang, llms.txt, Security Headers
+- Alle 23 Seiten technisch sauber bringen
+- Score 52→65 in 2 Wochen
+
+### Säule B — Strategischer Content + Authority (aus Cursor-Session)
+- 3 neue Pillar Pages für Top-Keywords
+- Bestehende thin Pages auf 600+ Wörter ausbauen
+- PR / Editorial Outreach
+- Klinikum Traunstein Backlink (Q3 2026)
+
+## 8. Offene Punkte / Next Actions (priorisiert)
+
+### Diese Woche
+- [ ] Strato-Passwort rotieren
+- [ ] 301-Redirect-Quellen identifizieren und auflösen
+- [ ] 404 fixen
+- [ ] Charset UTF-8 in .htaccess
+- [ ] Jameda-Profil anlegen
+- [ ] LocalBusiness + Physician Schema auf Startseite
+
+### Nächste 2 Wochen
+- [ ] OG-Tags global ausrollen
+- [ ] hreflang DE/EN
+- [ ] llms.txt
+- [ ] Security Headers
+- [ ] BreadcrumbList auf allen Subseiten
+- [ ] Internal Linking ausbauen (Body-Content-Links)
+
+### Monat 1
+- [ ] Pillar Page #1 „skoliose-spezialist" (3.500+ Wörter)
+- [ ] Top-5 thin Pages auf 700–1.000 Wörter ausbauen
+- [ ] Adresse Juli 2026 vorbereiten (Impressum/Datenschutz/Index)
+- [ ] Foto-Shooting Dr. Mosafer + Praxis
+
+### Q3 2026 (nach Juli)
+- [ ] Site-Update auf Rosenheim-Adresse
+- [ ] Timeline-Banner wieder einbauen (Karriere-Wechsel)
+- [ ] Klinikum Traunstein Backlink anfragen
+- [ ] Munich Inquire Media Bewerbung Focus TOP-Mediziner
+
+---
+
+## Referenz-Dateien
+
+- `00_KONTEXT_UND_PLAN.md` — diese Datei
+- `01_CROSS_CHECK_CLAUDE_CODE.md` — kritischer Vergleich beider Pläne
+- `02_PILLAR_PAGE_1_BRIEFING.md` — Detail-Briefing für ersten Pillar-Artikel (folgt)
+- Externe Quellen:
+  - Claude Code Full Audit: `~/Desktop/CLAUDE PRAXIS/FULL-AUDIT-REPORT.md`
+  - Claude Code Action Plan: `~/Desktop/CLAUDE PRAXIS/ACTION-PLAN.md`
+  - Claude Code Commit-Vorschlag: `~/Desktop/CLAUDE PRAXIS/SEO-COMMIT-ZUSAMMENFASSUNG.md`
+  - Claude Code Memory: `~/.claude/projects/-Users-mostafamosafer-Desktop-CLAUDE-PRAXIS/memory/`
+  - GSC Crawl Stats: `~/Desktop/gsc_crawl/`
