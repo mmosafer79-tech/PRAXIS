@@ -149,4 +149,6 @@ Beide Sessions führen am Ende ihrer Arbeit folgendes Update in `00_KONTEXT_UND_
 | Zeitpunkt | Session | Aufgabe | Status |
 |---|---|---|---|
 | 17.05. 03:00 | beide | Phase 0 abgeschlossen | ✅ |
+| 17.05. 12:30 | Cursor (Spur 2) | BreadcrumbList Schema auf 8 Subseiten + Person Schema + 12 contextual Internal Links | ✅ |
+| 17.05. ? | Claude Code (Spur 1) | Pillar Page #1 `skoliose-spezialist.html` | ⏳ in Arbeit |
 | | | | |

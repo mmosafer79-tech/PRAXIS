@@ -127,16 +127,17 @@ Der Plan setzt sich aus 2 parallelen Säulen zusammen:
 - [x] GSC manuelle Indexierung für 5 Hauptseiten angefordert
 - [x] Single Source of Truth in docs/seo/ etabliert
 
-### Phase 1 — DIESE WOCHE (offen)
+### Phase 1 — DIESE WOCHE
 - [ ] Strato-Passwort rotieren (war in deploy-Script sichtbar)
 - [ ] 301-Redirect-Quellen in GSC identifizieren und auflösen (23,33 % Crawl-Budget verbrannt)
 - [ ] Den einen 404 in GSC fixen
 - [ ] Server-Spike 12.05. (6.590 ms) mit Strato klären
 - [ ] Jameda-Profil anlegen
 - [ ] Online-Validatoren-Check: Rich Results, Open Graph, hreflang, securityheaders.com
-- [ ] BreadcrumbList Schema auf 22 Subseiten ausrollen
-- [ ] Person/Physician Schema auf `/praxis/ueber-dr-mosafer.html`
-- [ ] Internal Linking im Body-Content (2–3 Links pro Seite)
+- [x] BreadcrumbList Schema auf 8 Subseiten (WS-Chirurgie + Konservativ) ✅ Spur 2, 17.05. vormittag
+- [x] Person/Physician Schema auf `/praxis/ueber-dr-mosafer.html` ✅ Spur 2, 17.05. vormittag
+- [x] Internal Linking Body-Content auf 9 Seiten (12 contextual Links gesetzt) ✅ Spur 2, 17.05. vormittag
+- [ ] BreadcrumbList auf restliche 14 Subseiten (`skoliose/*`, `patienten/*`, `praxis/nachsorge.html`, `en/home.html`)
 
 ### Phase 2 — MONAT 1 (offen)
 - [ ] Pillar Page #1 „skoliose-spezialist.html" (3.500+ Wörter) — Briefing in 02_PILLAR_PAGE_1_BRIEFING.md
