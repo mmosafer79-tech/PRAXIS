@@ -5,6 +5,25 @@ Er ist die **Single Source of Truth** für die SEO-Arbeit und wird von **beiden*
 
 ---
 
+## ⚠️ Pfad-Information für KI-Sessions
+
+**Arbeitsverzeichnis (Git-Repo) ist:**
+```
+/Users/mostafamosafer/Desktop/MOSAFER_SPINE_EXTRACTED
+```
+
+**NICHT** `/Users/mostafamosafer/Desktop/CLAUDE PRAXIS/` (das ist nur Claude-Codes Audit-Snapshot-Ordner, kein Repo).
+
+**Jede Session als erstes:**
+```bash
+cd /Users/mostafamosafer/Desktop/MOSAFER_SPINE_EXTRACTED
+git pull --rebase origin main
+```
+
+**Deploy-Skript:** `/Users/mostafamosafer/Desktop/deploy-mosafer-spine.sh` (außerhalb Repo)
+
+---
+
 ## Dateien
 
 | Datei | Zweck | Status |
