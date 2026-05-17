@@ -1,3 +1,11 @@
+# Meta / Facebook Linkvorschau (facebookexternalhit, Facebot)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
+# Standard
 User-agent: *
 Allow: /
 
