@@ -138,9 +138,15 @@ Der Plan setzt sich aus 2 parallelen Säulen zusammen:
 - [x] Person/Physician Schema auf `/praxis/ueber-dr-mosafer.html` ✅ Spur 2, 17.05. vormittag
 - [x] MedicalClinic Schema auf `/en/home.html` (englisch, internationale Patienten) ✅ Spur 2 Runde 2
 - [x] Internal Linking Body-Content auf 9 Seiten (12 contextual Links gesetzt) ✅ Spur 2, 17.05. vormittag
+- [x] **Pillar Page #1 `skoliose-spezialist.html` LIVE** ✅ Spur 1 (Claude Code), 17.05. 13:44
+  - 3.752 Wörter, 11 H2, 36 H3, 1 H4
+  - MedicalWebPage + Physician + FAQPage Schema (alle valide)
+  - 57 interne Links, 7 externe Autoritäten (DWG, SRS, EuroSpine, AWMF, PubMed, Doctolib)
+  - 24 FAQ-Items, 30 Cobb-Winkel-Mentions, ICD-10 `M41`
+- [x] **Pillar-Integration**: Sitemap-Eintrag (priority 1.0) + 3 Hub-Backlinks + Nav-Top-Level auf 50 Seiten ✅ Cursor, 17.05. 13:55
 
 ### Phase 2 — MONAT 1 (offen)
-- [ ] Pillar Page #1 „skoliose-spezialist.html" (3.500+ Wörter) — Briefing in 02_PILLAR_PAGE_1_BRIEFING.md
+- [x] Pillar Page #1 „skoliose-spezialist.html" (3.500+ Wörter) — ✅ 17.05. fertig + integriert (sitemap, backlinks, nav)
 - [ ] Top-5 thin Pages auf 700–1.000 Wörter ausbauen:
   - `/skoliose/erstdiagnose.html` (433 → 900)
   - `/wirbelsaeulenchirurgie/bandscheibenvorfall.html` (338 → 900)

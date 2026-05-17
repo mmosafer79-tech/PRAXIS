@@ -151,7 +151,8 @@ Beide Sessions führen am Ende ihrer Arbeit folgendes Update in `00_KONTEXT_UND_
 | 17.05. 03:00 | beide | Phase 0 abgeschlossen | ✅ |
 | 17.05. 12:30 | Cursor (Spur 2 Runde 1) | BreadcrumbList Schema auf 8 Subseiten + Person Schema + 12 contextual Internal Links | ✅ |
 | 17.05. 12:55 | Cursor (Spur 2 Runde 2) | BreadcrumbList Schema auf 12 weitere Seiten + MedicalClinic Schema auf en/home.html | ✅ |
-| 17.05. 12:55+ | Claude Code (Spur 1) | Pillar Page #1 `skoliose-spezialist.html` | ⏳ läuft |
+| 17.05. 13:44 | Claude Code (Spur 1) | Pillar Page #1 `skoliose-spezialist.html` geschrieben (3.752 Wörter, 3 Schemas, valide) | ✅ |
+| 17.05. 13:55 | Cursor (Integration) | Pillar committet + sitemap.xml + 3 Hub→Pillar Backlinks + Nav-Top-Level auf 50 Seiten verlinkt | ✅ |
 | | | | |
 
 ### Komplette Schema-Coverage (Stand 17.05. 13:00)
