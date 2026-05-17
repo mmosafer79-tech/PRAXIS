@@ -7,6 +7,14 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- Pillar Pages (hoechste Prioritaet) -->
+  <url>
+    <loc>https://www.mosafer-spine.de/skoliose-spezialist.html</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+
   <!-- Skoliose -->
   <url>
     <loc>https://www.mosafer-spine.de/skoliose/erstdiagnose.html</loc>
