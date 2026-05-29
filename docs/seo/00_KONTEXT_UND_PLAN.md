@@ -42,7 +42,10 @@
 - Server: `5019296278.ssh.w2.strato.hosting`, Port 22, User `su765082`
 - Web-Root = `/`
 - Lokal: `/Users/mostafamosafer/Desktop/MOSAFER_SPINE_EXTRACTED`
-- ⚠️ **Strato-Passwort rotieren** — war in Session sichtbar
+- Deploy-Skript: `~/Desktop/deploy-mosafer-spine.sh`
+- **Passwort liegt in `~/Desktop/.mosafer-spine-deploy.env`** (chmod 600, außerhalb Repo) —
+  wird vom Skript per `source` geladen. Nach Rotation NUR diese Datei aktualisieren.
+- ⚠️ **Strato-Passwort noch rotieren** (29.05.2026: aus Skript ausgelagert, aber noch nicht geändert)
 
 ## 3. Tool-Status
 
