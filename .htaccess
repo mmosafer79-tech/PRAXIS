@@ -26,7 +26,7 @@ RewriteRule ^ https://www.mosafer-spine.de%{REQUEST_URI} [R=301,L]
 # Legacy-URLs der alten Website → neue Seitenstruktur (301 permanent)
 RewriteRule ^diagnostik\.html$ /skoliose/erstdiagnose.html [R=301,L]
 RewriteRule ^revisionschirurgie\.html$ /wirbelsaeulenchirurgie/revision.html [R=301,L]
-RewriteRule ^operative-chirurgie\.html$ /wirbelsaeulenchirurgie/bandscheibenvorfall.html [R=301,L]
+RewriteRule ^operative-chirurgie\.html$ /skoliose/operative-behandlung.html [R=301,L]
 
 # Interne Dokumentation nicht öffentlich auslieferbar
 RewriteRule ^docs(/.*)?$ - [F,L]

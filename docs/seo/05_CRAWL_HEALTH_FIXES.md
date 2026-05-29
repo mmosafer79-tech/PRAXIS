@@ -23,13 +23,16 @@ Alte Seiten aus dem Strato-Ursprungs-Upload werden 301 auf neue Seitenstruktur g
 ```apache
 RewriteRule ^diagnostik\.html$ /skoliose/erstdiagnose.html [R=301,L]
 RewriteRule ^revisionschirurgie\.html$ /wirbelsaeulenchirurgie/revision.html [R=301,L]
-RewriteRule ^operative-chirurgie\.html$ /wirbelsaeulenchirurgie/bandscheibenvorfall.html [R=301,L]
+RewriteRule ^operative-chirurgie\.html$ /skoliose/operative-behandlung.html [R=301,L]
 ```
 
 **Mapping-Begründung:**
 - `diagnostik.html` → `erstdiagnose.html`: Diagnoseprozess ist thematisch nächste Seite
 - `revisionschirurgie.html` → `revision.html`: Exakte Entsprechung in neuer Struktur
-- `operative-chirurgie.html` → `bandscheibenvorfall.html`: Häufigste operative Indikation
+- `operative-chirurgie.html` → `operative-behandlung.html`: OP-Übersicht passend zum Skoliosezentrum-Fokus
+
+> **Hinweis:** Mappings basieren auf Dateinamen-Inferenz — die alten Seiten lagen nur
+> auf Strato, nicht im Repo. Falls die alten Inhalte abweichen, Ziel anpassen.
 
 ### Fix 2 — `robots.txt`: `/docs/` blockieren
 
