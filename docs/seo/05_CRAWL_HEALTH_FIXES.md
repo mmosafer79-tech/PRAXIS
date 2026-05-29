@@ -8,7 +8,7 @@
 | GSC-Fehler | Seiten | Ursache | Fix |
 |---|---|---|---|
 | Alternativer kanonischer Tag | 1 | `diagnostik.html` doppelt indexiert (HTTP + HTTPS) | 301-Redirect |
-| 403 blockiert | 2 | `/docs/` von `.htaccess` gesperrt, aber nicht in robots.txt | `Disallow: /docs/` |
+| 403 blockiert | 2 | `/konservativ/` + `/praxis/` ohne `index.html` → Apache 403 (von Google per Pfad-Kürzen entdeckt) | 301-Redirect der Verzeichnisse |
 | Seite mit Weiterleitung | 2 | Alte URLs noch auf Strato-Server aktiv | 301-Redirects |
 | Gefunden – nicht indexiert | 9 | Neue Seiten noch nicht gecrawlt | Sitemap einreichen |
 
@@ -34,13 +34,30 @@ RewriteRule ^operative-chirurgie\.html$ /skoliose/operative-behandlung.html [R=3
 > **Hinweis:** Mappings basieren auf Dateinamen-Inferenz — die alten Seiten lagen nur
 > auf Strato, nicht im Repo. Falls die alten Inhalte abweichen, Ziel anpassen.
 
-### Fix 2 — `robots.txt`: `/docs/` blockieren
+### Fix 2 — `.htaccess`: Verzeichnis-URLs umleiten (echter 403-Fix)
+
+```apache
+RewriteRule ^praxis/?$ /praxis/ueber-dr-mosafer.html [R=301,L]
+RewriteRule ^konservativ/?$ /konservativ/prt-facettengelenksinfiltration.html [R=301,L]
+```
+
+Die 2 GSC-403-Fehler waren `https://www.mosafer-spine.de/konservativ/` und
+`/praxis/` — Verzeichnisse ohne `index.html`. Apache liefert dort 403 (Directory-Listing
+aus). Google hatte die Pfade durch automatisches URL-Kürzen entdeckt.
+Redirect-Ziele: `/praxis/` → Über-Dr.-Mosafer-Seite, `/konservativ/` → größte
+Inhaltsseite des Ordners (PRT-Facettengelenksinfiltration).
+
+> **Optional langfristig:** Echte Übersichts-/Hub-Seiten als `index.html` in beiden
+> Ordnern anlegen (bessere interne Verlinkung + SEO statt nur Redirect).
+
+### Fix 3 — `robots.txt`: `/docs/` blockieren (Härtung, nicht 403-Ursache)
 
 ```
 Disallow: /docs/
 ```
 
-Verhindert, dass Google die intern gesperrten Docs-URLs crawlt und als 403-Fehler in GSC erscheinen.
+Verhindert, dass Google die intern per `[F]` gesperrten Docs-URLs überhaupt crawlt.
+War **nicht** die Ursache der 2 GSC-403-Fehler (siehe Fix 2), aber sinnvolle Härtung.
 
 ---
 

@@ -28,5 +28,10 @@ RewriteRule ^diagnostik\.html$ /skoliose/erstdiagnose.html [R=301,L]
 RewriteRule ^revisionschirurgie\.html$ /wirbelsaeulenchirurgie/revision.html [R=301,L]
 RewriteRule ^operative-chirurgie\.html$ /skoliose/operative-behandlung.html [R=301,L]
 
+# Verzeichnis-URLs ohne Index-Datei → relevante Seite (vermeidet 403)
+# Google entdeckt Verzeichnis-Pfade durch URL-Kürzen automatisch.
+RewriteRule ^praxis/?$ /praxis/ueber-dr-mosafer.html [R=301,L]
+RewriteRule ^konservativ/?$ /konservativ/prt-facettengelenksinfiltration.html [R=301,L]
+
 # Interne Dokumentation nicht öffentlich auslieferbar
 RewriteRule ^docs(/.*)?$ - [F,L]
