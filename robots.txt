@@ -8,5 +8,6 @@ Allow: /
 # Standard
 User-agent: *
 Allow: /
+Disallow: /docs/
 
 Sitemap: https://www.mosafer-spine.de/sitemap.xml
