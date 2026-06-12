@@ -35,3 +35,13 @@ RewriteRule ^konservativ/?$ /konservativ/prt-facettengelenksinfiltration.html [R
 
 # Interne Dokumentation nicht öffentlich auslieferbar
 RewriteRule ^docs(/.*)?$ - [F,L]
+
+# Alt-Upload-Reste (Site-Kopie + internes Log) → 410 Gone, damit Google deindexiert.
+# Bewusst NICHT in robots.txt sperren: Google muss den 410 crawlen können.
+RewriteRule ^backup_seo(/.*)?$ - [G,L]
+RewriteRule ^seo_fix_log\.txt$ - [G,L]
+
+# /index.html → / (Duplikat der Startseite vermeiden; Bedingung verhindert
+# Redirect-Schleife mit DirectoryIndex)
+RewriteCond %{THE_REQUEST} \s/index\.html [NC]
+RewriteRule ^index\.html$ https://www.mosafer-spine.de/ [R=301,L]
