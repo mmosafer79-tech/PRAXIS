@@ -64,6 +64,7 @@
     .hero-content{padding:calc(68px + 5rem) 4rem 5rem 4rem;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center}
     .hero-eyebrow{font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;display:flex;align-items:center;gap:0.75rem}
     .hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+    .hero-status{font-size:0.8rem;font-weight:400;letter-spacing:0.04em;color:rgba(255,255,255,0.72);margin:-1.4rem 0 1.8rem 0;padding:0.35rem 0.9rem;border:1px solid rgba(201,168,76,0.35);border-radius:3px;align-self:flex-start}
     .hero-content h1{font-family:'DM Serif Display',serif;font-size:clamp(3rem,4.5vw,5.5rem);color:white;line-height:1.05;margin-bottom:1.6rem;letter-spacing:-0.01em}
     .hero-content h1 em{font-style:italic;color:var(--gold)}
     .hero-sub{font-size:1rem;line-height:1.85;color:rgba(255,255,255,0.58);font-weight:300;margin-bottom:3rem;max-width:500px}
@@ -165,6 +166,13 @@
     .btn-gold{display:inline-block;background:var(--gold);color:var(--navy-deep);padding:1rem 2.2rem;font-size:0.84rem;font-weight:500;text-decoration:none;border-radius:3px;transition:background 0.2s;letter-spacing:0.02em}
     .btn-gold:hover{background:#e8c97a}
 
+    /* ── Versorgungs-Streifen ── */
+    .status-strip{background:var(--white);border-top:1px solid var(--border);padding:2.2rem 4rem}
+    .status-strip-inner{max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:baseline;gap:0.6rem 2rem}
+    .status-strip-label{font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue-accent)}
+    .status-strip-value{font-size:0.92rem;color:var(--navy);font-weight:500}
+    .status-strip-note{font-size:0.84rem;color:var(--muted);font-weight:300;line-height:1.7}
+
     /* ── Final CTA ── */
     .final-cta{background:var(--offwhite);text-align:center;padding:6rem 4rem;border-top:1px solid var(--border)}
     .final-cta-inner{max-width:520px;margin:0 auto}
@@ -193,6 +201,7 @@
       nav{padding:0 2rem}
       .hero-content{padding:calc(68px + 4rem) 2.5rem 4rem}
       .section,.grundsaetze,.technik,.zweitmeinung-cta,.final-cta,.timeline-banner{padding:4.5rem 2.5rem}
+      .status-strip{padding:2rem 2.5rem}
     }
 
     @media(max-width:960px){
@@ -208,6 +217,7 @@
       .hero-content{position:relative;z-index:1;padding:calc(68px + 3rem) 2rem 3rem;max-width:600px}
       .hero-credentials{flex-wrap:wrap;gap:1rem}
       .section,.grundsaetze,.technik,.zweitmeinung-cta,.final-cta,.timeline-banner{padding:3.5rem 1.5rem}
+      .status-strip{padding:1.8rem 1.5rem}
       .schwerpunkte-grid{grid-template-columns:1fr 1fr}
       .technik-grid{grid-template-columns:1fr 1fr}
       .grundsaetze-wrap{grid-template-columns:1fr;gap:2.5rem}
@@ -228,6 +238,8 @@
       .hero-credentials{display:none}
       .schwerpunkte-grid,.technik-grid,.situationen-grid{grid-template-columns:1fr}
       .section,.grundsaetze,.technik,.zweitmeinung-cta,.final-cta,.timeline-banner{padding:2.5rem 1.25rem}
+      .status-strip{padding:1.5rem 1.25rem}
+      .status-strip-inner{flex-direction:column;gap:0.5rem}
       .footer-links{flex-direction:column;gap:0.75rem;align-items:center}
     }
   </style>
@@ -239,8 +251,11 @@
     "url": "https://www.mosafer-spine.de/",
     "description": "Dr. med. Mostafa Mosafer – Wirbelsäulenspezialist und Skoliose-Experte in Rosenheim. Operative und konservative Behandlung der Wirbelsäule.",
     "image": "https://www.mosafer-spine.de/uploads/logo.png",
+    "telephone": "+49 8031 3045672",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Jahnstraße 12",
+      "postalCode": "83022",
       "addressLocality": "Rosenheim",
       "addressRegion": "Bayern",
       "addressCountry": "DE"
@@ -320,12 +335,13 @@
       <ul class="nav-submenu">
         <li><a href="praxis/ueber-dr-mosafer.html">Über Dr. Mosafer</a></li>
         <li><a href="praxis/nachsorge.html">Nachsorge</a></li>
+        <li><a href="praxis/kontakt.html">Kontakt &amp; Anfahrt</a></li>
       </ul>
     </li>
     <li><a href="#">Patienten</a>
       <ul class="nav-submenu">
         <li><a href="patienten/international.html">International</a></li>
-        <li><a href="patienten/privatpatienten.html">Privatpatienten</a></li>
+        <li><a href="patienten/privatpatienten.html">Abrechnung &amp; Kassen</a></li>
       </ul>
     </li>
     <li><a href="#termin" class="nav-cta">Termin</a></li>
@@ -335,6 +351,7 @@
 <section class="home-hero">
   <div class="hero-content">
     <p class="hero-eyebrow">Dr. Mostafa Mosafer · Rosenheim</p>
+    <p class="hero-status">Alle Kassen · Privat · Selbstzahler</p>
     <h1>Wirbelsäule<br>und Skoliose –<br><em>namentliche<br>Expertise.</em></h1>
     <p class="hero-sub">Spezialisierte Praxis für Skoliose, komplexe Wirbelsäulenchirurgie und Revisionseingriffe. Persönliche Betreuung vom Erstgespräch bis zur Langzeit-Nachsorge.</p>
     <div class="hero-actions">
@@ -461,11 +478,11 @@
         <span class="situation-link">→ International patients</span>
       </a>
       <a href="patienten/privatpatienten.html" class="situation-card">
-        <span class="situation-tag">Privat &amp; Selbstzahler</span>
-        <h4>Informationen für Privatpatienten.</h4>
-        <span class="situation-context">GOÄ · PKV · Beihilfe</span>
-        <p>GOÄ-Abrechnung, Kostenvoranschläge, Wahlarztleistungen, Koordination mit PKV und Beihilfe – transparent und ohne Marketing-Pathos.</p>
-        <span class="situation-link">→ Privatpatienten-Infos</span>
+        <span class="situation-tag">Abrechnung</span>
+        <h4>Bin ich hier als Kassenpatient richtig?</h4>
+        <span class="situation-context">GKV · PKV · Beihilfe · Selbstzahler</span>
+        <p>Die Praxis hat eine Kassenzulassung. Behandelt werden alle gesetzlichen Kassen, Privatversicherte, Beihilfe-Berechtigte und Selbstzahler – mit transparenter Kostenkommunikation.</p>
+        <span class="situation-link">→ Abrechnung &amp; Kassen</span>
       </a>
       <a href="praxis/nachsorge.html" class="situation-card">
         <span class="situation-tag">Nachsorge</span>
@@ -530,10 +547,19 @@
   </div>
 </section>
 
+<section class="status-strip">
+  <div class="status-strip-inner">
+    <span class="status-strip-label">Versicherungsstatus</span>
+    <span class="status-strip-value">Alle Kassen · Privat · Selbstzahler</span>
+    <p class="status-strip-note">Die Praxis in Rosenheim verfügt über eine Kassenzulassung. <a href="patienten/privatpatienten.html" style="color:var(--blue-accent);text-decoration:none">Details zur Abrechnung →</a></p>
+  </div>
+</section>
+
 <section id="termin" class="final-cta">
   <div class="final-cta-inner">
     <h2>Termin oder Zweitmeinung –<br>direkt an Dr. Mosafer.</h2>
     <p>Für Erstgespräche, Zweitmeinungen und Verlaufskontrollen. Unterlagen können vorab digital eingereicht werden.</p>
+    <p>Die Praxis hat eine Kassenzulassung: Sie können sich als gesetzlich Versicherter aller Kassen, als Privatversicherter, Beihilfe-Berechtigter oder als Selbstzahler vorstellen. Telefonisch erreichbar unter 08031 3045672.</p>
     <a href="https://doctolib.de/praxis/vogtareuth/wirbelsaeulen-und-skoliosezentrum-dr-med-mostafa-mosafer" target="_blank" class="btn-navy">Jetzt Termin vereinbaren →</a>
   </div>
 </section>
@@ -541,6 +567,7 @@
 <footer>
   <p>© 2026 Mosafer Spine · Dr. Mostafa Mosafer</p>
   <ul class="footer-links">
+    <li><a href="praxis/kontakt.html">Kontakt &amp; Anfahrt</a></li>
     <li><a href="en/home.html">English · International patients</a></li>
     <li><a href="datenschutz.html">Datenschutz</a></li>
     <li><a href="impressum.html">Impressum</a></li>
