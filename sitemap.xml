@@ -10,6 +10,13 @@
 
   <!-- Pillar Pages (hoechste Prioritaet) -->
   <url>
+    <loc>https://www.mosafer-spine.de/leistungen.html</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-08</lastmod>
+  </url>
+
+  <url>
     <loc>https://www.mosafer-spine.de/skoliose-spezialist.html</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
