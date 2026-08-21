@@ -178,6 +178,12 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.mosafer-spine.de/en/neuromuscular-scoliosis.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
   <!-- Legal -->
 
