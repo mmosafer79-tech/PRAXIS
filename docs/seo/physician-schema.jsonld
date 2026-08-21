@@ -1,0 +1,33 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "@id": "https://mosafer-spine.de/#physician",
+  "name": "Dr. Mostafa Mosafer",
+  "description": "Facharzt für Orthopädie und Unfallchirurgie — Schwerpunkt Wirbelsäule und Skoliose. Leiter Skoliosezentrum Rosenheim.",
+  "medicalSpecialty": "Orthopedic",
+  "url": "https://mosafer-spine.de/",
+  "image": "https://mosafer-spine.de/images/dr-mosafer.jpg",
+  "telephone": "+49 8031 3045672",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jahnstraße 12",
+    "postalCode": "83022",
+    "addressLocality": "Rosenheim",
+    "addressRegion": "Bayern",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 47.8560,
+    "longitude": 12.1289
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1",
+    "reviewCount": "3"
+  }
+}
+</script>
