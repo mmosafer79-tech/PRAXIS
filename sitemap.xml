@@ -78,6 +78,12 @@
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.mosafer-spine.de/skoliose/neuromuskulaere-skoliose.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
   <!-- Wirbelsäulenchirurgie -->
   <url>
