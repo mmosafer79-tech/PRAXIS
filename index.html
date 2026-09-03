@@ -81,7 +81,7 @@
     .btn-ghost{display:inline-block;color:rgba(255,255,255,0.6);font-size:0.84rem;font-weight:400;text-decoration:none;padding:0.95rem 0;border-bottom:1px solid rgba(255,255,255,0.2);transition:all 0.2s}
     .btn-ghost:hover{color:white;border-bottom-color:rgba(255,255,255,0.5)}
 
-    .hero-credentials{display:flex;gap:2rem;margin-top:4rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.08)}
+    .hero-credentials{display:flex;flex-direction:column;gap:0.55rem;margin-top:4rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.08)}
     .cred-item{display:flex;flex-direction:column;gap:0.2rem}
     .cred-label{font-size:0.65rem;color:rgba(255,255,255,0.35);letter-spacing:0.12em;text-transform:uppercase}
     .cred-value{font-size:0.82rem;color:rgba(255,255,255,0.7);font-weight:300}
@@ -225,7 +225,7 @@
       .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:70% 5%;opacity:0.5}
       .hero-photo::before{background:linear-gradient(to bottom, var(--navy-deep) 0%, rgba(9,21,48,0.5) 50%, var(--navy-deep) 100%)}
       .hero-content{position:relative;z-index:1;padding:calc(68px + 3rem) 2rem 3rem;max-width:600px}
-      .hero-credentials{flex-wrap:wrap;gap:1rem}
+      .hero-credentials{gap:0.55rem}
       .section,.grundsaetze,.technik,.zweitmeinung-cta,.final-cta,.timeline-banner{padding:3.5rem 1.5rem}
       .status-strip{padding:1.8rem 1.5rem}
       .schwerpunkte-grid{grid-template-columns:1fr 1fr}
@@ -245,7 +245,7 @@
       .hero-content{padding:calc(68px + 2rem) 1.25rem 2.5rem}
       .hero-content h1{font-size:2.6rem}
       .hero-actions{flex-direction:column;align-items:flex-start;gap:0.75rem}
-      .hero-credentials{margin-top:2rem;padding-top:1.5rem;flex-wrap:wrap;gap:0.9rem 1.4rem}
+      .hero-credentials{margin-top:2rem;padding-top:1.5rem;gap:0.5rem}
       .schwerpunkte-grid,.technik-grid,.situationen-grid{grid-template-columns:1fr}
       .section,.grundsaetze,.technik,.zweitmeinung-cta,.final-cta,.timeline-banner{padding:2.5rem 1.25rem}
       .status-strip{padding:1.5rem 1.25rem}
@@ -383,22 +383,13 @@
     <h1>Wirbelsäule<br>und Skoliose –<br><em>namentliche<br>Expertise.</em></h1>
     <p class="hero-sub">Spezialisierte Praxis für Skoliose, komplexe Wirbelsäulenchirurgie und Revisionseingriffe. Persönliche Betreuung vom Erstgespräch bis zur Langzeit-Nachsorge.</p>
     <div class="hero-actions">
-      <a href="#termin" class="btn-primary">Termin vereinbaren</a>
+      <a href="https://doctolib.de/praxis/vogtareuth/wirbelsaeulen-und-skoliosezentrum-dr-med-mostafa-mosafer" target="_blank" rel="noopener" class="btn-primary">Termin vereinbaren</a>
       <a href="skoliose/zweitmeinung.html" class="btn-ghost">Zweitmeinung anfragen →</a>
     </div>
     <div class="hero-credentials">
-      <div class="cred-item">
-        <span class="cred-label">Schwerpunkt</span>
-        <span class="cred-value">Skoliose &amp; Wirbelsäulendeformitäten</span>
-      </div>
-      <div class="cred-item">
-        <span class="cred-label">Qualifikation</span>
-        <span class="cred-value">Facharzt für Orthopädie und Unfallchirurgie</span>
-      </div>
-      <div class="cred-item">
-        <span class="cred-label">Position</span>
-        <span class="cred-value">Chefarzt am Klinikum Traunstein</span>
-      </div>
+      <span class="cred-value">Facharzt für Orthopädie und Unfallchirurgie</span>
+      <span class="cred-value">Schwerpunkt Skoliose &amp; Wirbelsäulendeformitäten</span>
+      <span class="cred-value">Chefarzt am Klinikum Traunstein</span>
     </div>
   </div>
   <div class="hero-photo">
