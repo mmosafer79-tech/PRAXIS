@@ -140,10 +140,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255
 .data-table tr:hover td{background:var(--offwhite)}
 
 /* ── Doctolib Widget ── */
-.doctolib-widget{position:fixed;bottom:2rem;right:2rem;z-index:998}
+.doctolib-widget{position:fixed;bottom:2rem;right:2rem;z-index:998;display:flex;flex-direction:column;gap:0.5rem;align-items:flex-end}
 .doctolib-widget a{display:flex;align-items:center;gap:0.6rem;background:var(--navy);color:#fff;text-decoration:none;padding:0.75rem 1.2rem;border-radius:4px;box-shadow:0 4px 20px rgba(15,32,68,0.35);transition:background 0.2s}
 .doctolib-widget a:hover{background:var(--navy-mid)}
 .doctolib-widget .btn-label{font-size:0.78rem;font-weight:500;letter-spacing:0.04em}
+.doctolib-widget .widget-icons{display:flex;gap:0.5rem}
+.doctolib-widget a.widget-call,.doctolib-widget a.widget-mail{background:#fff;color:var(--navy);border:1px solid var(--navy);width:44px;height:44px;padding:0;justify-content:center}
+.doctolib-widget a.widget-call:hover,.doctolib-widget a.widget-mail:hover{background:var(--offwhite)}
+.cta-section .cta-alt{color:rgba(255,255,255,0.6);font-size:0.85rem;margin-top:1.5rem}
+.cta-section .cta-alt a{color:#fff;text-decoration:underline}
 .doctolib-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
 
 /* ── Footer ── */
