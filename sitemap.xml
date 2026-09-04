@@ -3,188 +3,186 @@
 
   <url>
     <loc>https://www.mosafer-spine.de/</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>1.0</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
 
   <!-- Pillar Pages (hoechste Prioritaet) -->
   <url>
     <loc>https://www.mosafer-spine.de/leistungen.html</loc>
-    <priority>0.9</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-08-08</lastmod>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.mosafer-spine.de/skoliose-spezialist.html</loc>
-    <priority>1.0</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-06-01</lastmod>
+    <priority>1.0</priority>
   </url>
 
   <!-- Skoliose -->
   <url>
     <loc>https://www.mosafer-spine.de/skoliose/erstdiagnose.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/skoliose/krankengymnastik.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/skoliose/korsett-therapie.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/skoliose/operative-behandlung.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/skoliose/vbt.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/skoliose/magec-rods.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/skoliose/nemost.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/skoliose/zweitmeinung.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/skoliose/erwachsenenskoliose.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/skoliose/neuromuskulaere-skoliose.html</loc>
-    <lastmod>2026-08-21</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Wirbelsäulenchirurgie -->
   <url>
     <loc>https://www.mosafer-spine.de/wirbelsaeulenchirurgie/bandscheibenvorfall.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/wirbelsaeulenchirurgie/spinalkanalstenose.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/wirbelsaeulenchirurgie/minimalinvasiv.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/wirbelsaeulenchirurgie/dynamische-stabilisation.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/wirbelsaeulenchirurgie/revision.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Konservativ -->
   <url>
     <loc>https://www.mosafer-spine.de/konservativ/prp-acp.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/konservativ/prt-facettengelenksinfiltration.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/konservativ/stosswellentherapie.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Praxis -->
   <url>
     <loc>https://www.mosafer-spine.de/praxis/ueber-dr-mosafer.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/praxis/nachsorge.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/praxis/kontakt.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Patienten -->
   <url>
     <loc>https://www.mosafer-spine.de/patienten/international.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/patienten/privatpatienten.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- English -->
   <url>
     <loc>https://www.mosafer-spine.de/en/home.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.mosafer-spine.de/en/neuromuscular-scoliosis.html</loc>
-    <lastmod>2026-08-22</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
-
-  <!-- Legal -->
 
 </urlset>
