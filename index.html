@@ -81,14 +81,19 @@
     .btn-ghost{display:inline-block;color:rgba(255,255,255,0.6);font-size:0.84rem;font-weight:400;text-decoration:none;padding:0.95rem 0;border-bottom:1px solid rgba(255,255,255,0.2);transition:all 0.2s}
     .btn-ghost:hover{color:white;border-bottom-color:rgba(255,255,255,0.5)}
 
-    .hero-credentials{display:flex;flex-direction:column;gap:0.55rem;margin-top:4rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.08)}
-    .cred-item{display:flex;flex-direction:column;gap:0.2rem}
-    .cred-label{font-size:0.65rem;color:rgba(255,255,255,0.35);letter-spacing:0.12em;text-transform:uppercase}
-    .cred-value{font-size:0.82rem;color:rgba(255,255,255,0.7);font-weight:300}
+    .hero-badges{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:3rem;position:relative;z-index:2}
+    .hero-badge{font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);border:1px solid rgba(201,168,76,0.25);padding:0.5rem 0.95rem;border-radius:2px;display:inline-flex;align-items:center;gap:0.5rem}
+    .hero-badge::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
 
     .hero-photo{position:relative;overflow:hidden;display:flex;align-items:flex-end}
     .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:95% 5%;display:block;opacity:0.95}
     .hero-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--navy-deep) 0%,transparent 45%),linear-gradient(to top,var(--navy-deep) 0%,transparent 12%);z-index:1}
+    .hero-doc-overlay{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:2.5rem 2.5rem 2.5rem;background:linear-gradient(to top,rgba(9,21,48,0.9) 0%,rgba(9,21,48,0.55) 55%,transparent 100%)}
+    .hero-doc-card{display:flex;align-items:center;gap:1.1rem;padding:1.1rem 1.3rem;background:var(--white);border-left:3px solid var(--gold);border-radius:3px;box-shadow:0 16px 40px rgba(9,21,48,0.35)}
+    .doc-avatar{width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:1.05rem;flex-shrink:0}
+    .doc-name{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--navy);line-height:1.2}
+    .doc-title{font-size:0.72rem;color:var(--muted);margin-top:0.25rem;line-height:1.4}
+    .doc-societies{font-size:0.68rem;color:var(--gold);letter-spacing:0.04em;margin-top:0.35rem;font-weight:500}
 
     /* ── Section basics ── */
     .section{padding:5.5rem 4rem}
@@ -205,26 +210,16 @@
     .doctolib-widget a.widget-call:hover,.doctolib-widget a.widget-mail:hover{background:#f4f2ee}
     .doctolib-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
 
-    /* ── Trust-Badge-Leiste (Baustein 01) ── */
-    .trust-bar{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:22px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 40px;max-width:1080px;margin:-2.5rem auto 0;position:relative;z-index:3;box-shadow:0 12px 40px rgba(15,32,68,0.08)}
-    .trust-bar .item{display:flex;align-items:center;gap:12px}
-    .trust-bar .mark{width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--gold-light);display:grid;place-items:center;font-family:'DM Serif Display',serif;font-size:0.82rem;flex-shrink:0}
-    .trust-bar .label{font-size:0.82rem;line-height:1.35}
-    .trust-bar .label strong{display:block;color:var(--navy);font-size:0.9rem}
-    .trust-bar .label span{color:var(--muted)}
-    .trust-bar-wrap{padding:0 4rem;position:relative}
-
-    /* ── Zahlen-Sektion (Baustein 02) ── */
-    .stats-section{background:var(--navy);padding:5.5rem 4rem;text-align:center}
-    .stats-section .section-label{justify-content:center;color:var(--gold)}
-    .stats-section .section-label::before{display:none}
-    .stats-section h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,2.5vw,2.6rem);color:white;margin-bottom:3rem}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 28px;max-width:1080px;margin:0 auto}
-    .stats .stat{text-align:center;padding:8px 12px}
-    .stats .num{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,4vw,3.1rem);color:var(--gold-light);line-height:1}
-    .stats .num sup{font-size:0.45em}
-    .stats .desc{color:#b8c4dd;font-size:0.88rem;margin-top:10px}
-    .stats .desc strong{color:var(--white);display:block;font-size:0.95rem;margin-bottom:2px}
+    /* ── Zahlen-Band (Baustein 02, Orthopädicum-Aufbau) ── */
+    .zahlen-band{background:var(--navy);padding:2.6rem 4rem;display:grid;grid-template-columns:repeat(6,1fr);position:relative}
+    .zahlen-band::before,.zahlen-band::after{content:'';position:absolute;left:4rem;right:4rem;height:1px;background:rgba(201,168,76,0.15)}
+    .zahlen-band::before{top:0}
+    .zahlen-band::after{bottom:0}
+    .zahl-item{text-align:center;padding:0.4rem 0.6rem;position:relative}
+    .zahl-item:not(:last-child)::after{content:'';position:absolute;right:0;top:15%;bottom:15%;width:1px;background:linear-gradient(to bottom,transparent,rgba(201,168,76,0.25) 30%,rgba(201,168,76,0.25) 70%,transparent)}
+    .zahl-num{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,2.4vw,2rem);color:var(--gold-light);line-height:1}
+    .zahl-num sup{font-size:0.5em}
+    .zahl-label{font-size:0.62rem;letter-spacing:0.06em;color:rgba(255,255,255,0.5);margin-top:0.6rem;line-height:1.4}
 
     /* ── Google-Bewertungen (Baustein 03) ── */
     .rating-inline{display:inline-flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--border);border-radius:999px;padding:10px 22px 10px 16px}
@@ -267,7 +262,8 @@
       .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:70% 5%;opacity:0.5}
       .hero-photo::before{background:linear-gradient(to bottom, var(--navy-deep) 0%, rgba(9,21,48,0.5) 50%, var(--navy-deep) 100%)}
       .hero-content{position:relative;z-index:1;padding:calc(68px + 3rem) 2rem 3rem;max-width:600px}
-      .hero-credentials{gap:0.55rem}
+      .hero-badges{margin-top:2rem}
+      .hero-doc-overlay{display:none}
       .section,.grundsaetze,.technik,.zweitmeinung-cta,.final-cta,.timeline-banner{padding:3.5rem 1.5rem}
       .status-strip{padding:1.8rem 1.5rem}
       .schwerpunkte-grid{grid-template-columns:1fr 1fr}
@@ -280,9 +276,8 @@
       .timeline-dot{top:0;margin-bottom:0.5rem}
       footer{flex-direction:column;padding:1.5rem;text-align:center}
       .doctolib-widget{bottom:1rem;right:1rem}
-      .trust-bar-wrap{padding:0 1.5rem}
-      .trust-bar{margin-top:-1.5rem}
-      .stats{grid-template-columns:repeat(2,1fr)}
+      .zahlen-band{grid-template-columns:repeat(3,1fr);padding:2.2rem 1.5rem;gap:1.5rem 0}
+      .zahl-item:nth-child(3)::after{display:none}
       .review-grid,.voice-grid{grid-template-columns:1fr}
     }
 
@@ -291,14 +286,14 @@
       .hero-content{padding:calc(68px + 2rem) 1.25rem 2.5rem}
       .hero-content h1{font-size:2.6rem}
       .hero-actions{flex-direction:column;align-items:flex-start;gap:0.75rem}
-      .hero-credentials{margin-top:2rem;padding-top:1.5rem;gap:0.5rem}
+      .hero-badges{margin-top:1.5rem}
       .schwerpunkte-grid,.technik-grid,.situationen-grid{grid-template-columns:1fr}
       .section,.grundsaetze,.technik,.zweitmeinung-cta,.final-cta,.timeline-banner{padding:2.5rem 1.25rem}
       .status-strip{padding:1.5rem 1.25rem}
       .status-strip-inner{flex-direction:column;gap:0.5rem}
       .footer-links{flex-direction:column;gap:0.75rem;align-items:center}
-      .stats{grid-template-columns:1fr}
-      .stats-section{padding:3.5rem 1.25rem}
+      .zahlen-band{grid-template-columns:repeat(2,1fr);padding:2rem 1.25rem}
+      .zahl-item:nth-child(2)::after{display:none}
     }
   </style>
   <script type="application/ld+json">
@@ -483,45 +478,35 @@
     </div>
     -->
 
-    <div class="hero-credentials">
-      <span class="cred-value">Facharzt für Orthopädie und Unfallchirurgie</span>
-      <span class="cred-value">Schwerpunkt Skoliose &amp; Wirbelsäulendeformitäten</span>
-      <span class="cred-value">Chefarzt am Klinikum Traunstein</span>
+    <div class="hero-badges">
+      <span class="hero-badge">Facharzt für Orthopädie und Unfallchirurgie</span>
+      <span class="hero-badge">Skoliose &amp; Wirbelsäulendeformitäten</span>
+      <span class="hero-badge">Chefarzt am Klinikum Traunstein</span>
     </div>
   </div>
   <div class="hero-photo">
     <img src="uploads/foto.jpeg" alt="Dr. Mostafa Mosafer – Wirbelsäulenchirurg">
+    <div class="hero-doc-overlay">
+      <div class="hero-doc-card">
+        <div class="doc-avatar">MM</div>
+        <div>
+          <div class="doc-name">Dr. med. Mostafa Mosafer</div>
+          <div class="doc-title">Chefarzt der Abteilung für Kinderorthopädie und Skoliose · Klinikum Traunstein</div>
+          <div class="doc-societies">DWG · EUROSPINE · BVOU · AO Spine · SRS</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="trust-bar-wrap">
-  <!-- Baustein 01 · Trust-Badge-Leiste. Kreis-Monogramme sind Platzhalter; echte Logos erst nach schriftlicher Freigabe der Organisationen als <img> einsetzen. -->
-  <div class="trust-bar">
-    <div class="item">
-      <div class="mark">KT</div>
-      <div class="label"><strong>Klinikum Traunstein</strong><span>Chefarzt der Abteilung für Kinderorthopädie und Skoliose</span></div>
-    </div>
-    <div class="item">
-      <div class="mark">DWG</div>
-      <div class="label"><strong>Deutsche Wirbelsäulengesellschaft</strong><span>Mitglied</span></div>
-    </div>
-    <div class="item">
-      <div class="mark">ES</div>
-      <div class="label"><strong>EUROSPINE</strong><span>The Spine Society of Europe</span></div>
-    </div>
-    <div class="item">
-      <div class="mark">BVOU</div>
-      <div class="label"><strong>Berufsverband Orthopädie</strong><span>und Unfallchirurgie</span></div>
-    </div>
-    <div class="item">
-      <div class="mark">AO</div>
-      <div class="label"><strong>AO Spine</strong><span>Mitglied</span></div>
-    </div>
-    <div class="item">
-      <div class="mark">SRS</div>
-      <div class="label"><strong>Scoliosis Research Society</strong><span>Mitglied</span></div>
-    </div>
-  </div>
+<!-- Baustein 02 · Zahlen-Band (Orthopädicum-Aufbau: schmales Band direkt unter dem Hero) -->
+<div class="zahlen-band">
+  <div class="zahl-item"><div class="zahl-num">15</div><div class="zahl-label">Jahre Berufserfahrung</div></div>
+  <div class="zahl-item"><div class="zahl-num">1500<sup>+</sup></div><div class="zahl-label">Wirbelsäulen-OPs</div></div>
+  <div class="zahl-item"><div class="zahl-num">100<sup>+</sup></div><div class="zahl-label">Komplexe Eingriffe/Jahr</div></div>
+  <div class="zahl-item"><div class="zahl-num">24</div><div class="zahl-label">Fragen der Zweitmeinung</div></div>
+  <div class="zahl-item"><div class="zahl-num">12<sup>+</sup></div><div class="zahl-label">Monate Nachsorge</div></div>
+  <div class="zahl-item"><div class="zahl-num">3</div><div class="zahl-label">Sprachen</div></div>
 </div>
 
 <section class="section schwerpunkte">
@@ -566,25 +551,6 @@
         </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="stats-section">
-  <p class="section-label">Erfahrung, die man messen kann</p>
-  <h2>Spezialisierung in Zahlen.</h2>
-  <div class="stats">
-    <div class="stat"><div class="num">15</div>
-      <div class="desc"><strong>Jahre Berufserfahrung</strong>Orthopädie, Unfall- und Wirbelsäulenchirurgie</div></div>
-    <div class="stat"><div class="num">1500<sup>+</sup></div>
-      <div class="desc"><strong>Wirbelsäulen-Operationen</strong>über die gesamte Laufbahn</div></div>
-    <div class="stat"><div class="num">100<sup>+</sup></div>
-      <div class="desc"><strong>Komplexe Eingriffe pro Jahr</strong>Deformitäten und Revisionen</div></div>
-    <div class="stat"><div class="num">24</div>
-      <div class="desc"><strong>Fragen der Zweitmeinungs-Methode</strong>strukturiert, unabhängig, ergebnisoffen</div></div>
-    <div class="stat"><div class="num">12<sup>+</sup></div>
-      <div class="desc"><strong>Monate strukturierte Nachsorge</strong>bei Kindern über viele Jahre</div></div>
-    <div class="stat"><div class="num">3</div>
-      <div class="desc"><strong>Sprachen in der Betreuung</strong>Deutsch · Englisch · Persisch</div></div>
   </div>
 </section>
 

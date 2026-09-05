@@ -204,14 +204,6 @@ footer p{font-size:0.73rem;color:rgba(255,255,255,0.25);margin:0}
   .related-links{flex-direction:column}
 }
 
-/* ── Trust-Badge-Leiste (Baustein 01) ── */
-.trust-bar{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:22px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 40px}
-.trust-bar .item{display:flex;align-items:center;gap:12px}
-.trust-bar .mark{width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--gold-light);display:grid;place-items:center;font-family:'DM Serif Display',serif;font-size:0.82rem;flex-shrink:0}
-.trust-bar .label{font-size:0.82rem;line-height:1.35}
-.trust-bar .label strong{display:block;color:var(--navy);font-size:0.9rem}
-.trust-bar .label span{color:var(--muted)}
-
 /* ── Google-Bewertungen (Baustein 03) ── */
 .rating-inline{display:inline-flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--border);border-radius:999px;padding:10px 22px 10px 16px}
 .rating-inline .stars{display:flex;gap:2px}
@@ -232,15 +224,3 @@ footer p{font-size:0.73rem;color:rgba(255,255,255,0.25);margin:0}
 .voice .who{font-size:0.82rem;color:var(--muted)}
 @media(max-width:860px){.voice-grid{grid-template-columns:1fr}}
 
-/* ── Zahlen-Sektion (Baustein 02) ── */
-.stats-section{background:var(--navy);padding:5rem 4rem;text-align:center}
-.stats-section .eyebrow{font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
-.stats-section h2{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,2.2vw,2.4rem);color:white;margin-bottom:3rem}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 28px;max-width:1080px;margin:0 auto}
-.stats .stat{text-align:center;padding:8px 12px}
-.stats .num{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,4vw,3.1rem);color:var(--gold-light);line-height:1}
-.stats .num sup{font-size:0.45em}
-.stats .desc{color:#b8c4dd;font-size:0.88rem;margin-top:10px}
-.stats .desc strong{color:var(--white);display:block;font-size:0.95rem;margin-bottom:2px}
-@media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.stats{grid-template-columns:1fr}}
