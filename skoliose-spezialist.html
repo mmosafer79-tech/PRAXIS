@@ -93,7 +93,9 @@
     "memberOf": [
       {"@type": "Organization", "name": "Deutsche Wirbelsäulengesellschaft (DWG)"},
       {"@type": "Organization", "name": "EUROSPINE"},
-      {"@type": "Organization", "name": "Berufsverband für Orthopädie und Unfallchirurgie (BVOU)"}
+      {"@type": "Organization", "name": "Berufsverband für Orthopädie und Unfallchirurgie (BVOU)"},
+      {"@type": "Organization", "name": "AO Spine"},
+      {"@type": "Organization", "name": "Scoliosis Research Society (SRS)"}
     ],
     "availableService": [
       {"@type": "MedicalProcedure", "name": "Skoliose-Erstdiagnose & Cobb-Winkel-Bestimmung"},
@@ -239,6 +241,31 @@
       })();
     </script>
     <!-- End Matomo -->
+    <!-- Matomo Scroll-Tiefe (Weg B, kostenlos, cookielos) -->
+    <script>
+    (function(){
+      if(window.__matomoScrollDepth) return; window.__matomoScrollDepth=true;
+      var marks=[25,50,75,100], fired={};
+      function pct(){
+        var d=document.documentElement, b=document.body;
+        var sh=Math.max(d.scrollHeight,b.scrollHeight), ch=d.clientHeight;
+        var st=window.scrollY||d.scrollTop||0;
+        if(sh<=ch) return 100;
+        return Math.min(100, Math.round((st+ch)/sh*100));
+      }
+      function check(){
+        var p=pct();
+        marks.forEach(function(m){
+          if(p>=m && !fired[m]){ fired[m]=true;
+            if(window._paq){ _paq.push(['trackEvent','Scroll-Tiefe', m+'%', location.pathname]); }
+          }
+        });
+      }
+      var t; window.addEventListener('scroll', function(){ clearTimeout(t); t=setTimeout(check,200); }, {passive:true});
+      window.addEventListener('load', check);
+    })();
+    </script>
+    <!-- End Scroll-Tiefe -->
 </head>
 <body>
 
@@ -474,6 +501,16 @@
   </div>
 </section>
 
+<!-- ── Infografik · Behandlungspfad (Baustein 05) ── -->
+<section class="section" style="padding-bottom:0">
+  <div class="section-inner">
+    <figure style="margin:0">
+      <img src="assets/infografik-behandlungspfad.svg" alt="Behandlungspfad bei Skoliose im Wachstum: 1. Beobachtung unter 20 Grad, 2. Schroth-Therapie ab 10 bis 20 Grad, 3. Korsett bei 20 bis 45 Grad, 4. OP-Diskussion über 45 Grad" style="width:100%;height:auto" loading="lazy">
+      <figcaption style="font-size:0.78rem;color:var(--muted);font-weight:300;margin-top:1rem;text-align:center">Behandlungspfad der adoleszenten idiopathischen Skoliose (AIS) im Wachstum — angelehnt an die S2k-Leitlinie „Idiopathische Skoliose" (AWMF).</figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- ── Section 5 · Konservative Behandlung ── -->
 <section class="section section-alt">
   <div class="section-inner">
@@ -508,6 +545,10 @@
         <p><a href="konservativ/prt-facettengelenksinfiltration.html">→ PRT &amp; Facetteninfiltration</a></p>
 
         <h4 style="margin-top:2rem">Cobb-Winkel und Therapie-Entscheidung</h4>
+
+        <figure style="margin:1.25rem 0 0">
+          <img src="assets/infografik-cobb-winkel.svg" alt="Cobb-Winkel-Skala: unter 10 Grad Asymmetrie ohne Therapiebedarf, 10 bis 20 Grad Beobachtung plus Schroth, 20 bis 30 Grad Schroth gegebenenfalls Korsett, 30 bis 45 Grad Korsett konsequent, über 45 Grad OP-Indikation prüfen" style="width:100%;height:auto" loading="lazy">
+        </figure>
 
         <p style="font-size:0.8em;text-transform:uppercase;letter-spacing:0.05em;color:#667085;margin:1.5rem 0 0.75rem;font-weight:600">Im Wachstum (skelettal unreif)</p>
         <div class="cobb-stages" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.5rem;margin-bottom:1rem">
@@ -711,7 +752,7 @@
         <p><a href="patienten/privatpatienten.html">→ Informationen für Privatpatienten</a></p>
 
         <h3>Internationale Patienten</h3>
-        <p>Die Praxis betreut regelmäßig internationale Patienten — aus Europa, dem Nahen Osten und darüber hinaus. Beratung und Korrespondenz auf Deutsch, Englisch, Arabisch und Persisch. Für Patienten, deren Anreise aufwendig ist, bieten wir <strong>Video-Zweitmeinungen</strong> mit vorab digital eingereichten Bildbefunden — so lässt sich vor jeder Reise klären, ob eine Vorstellung vor Ort überhaupt erforderlich ist.</p>
+        <p>Die Praxis betreut regelmäßig internationale Patienten — aus Europa, dem Nahen Osten und darüber hinaus. Beratung und Korrespondenz auf Deutsch, Englisch und Persisch. Für Patienten, deren Anreise aufwendig ist, bieten wir <strong>Video-Zweitmeinungen</strong> mit vorab digital eingereichten Bildbefunden — so lässt sich vor jeder Reise klären, ob eine Vorstellung vor Ort überhaupt erforderlich ist.</p>
         <p><a href="patienten/international.html">→ Informationen für internationale Patienten</a></p>
       </div>
       <div>
@@ -721,7 +762,7 @@
         </div>
         <div class="info-box" style="margin-top:1.5rem">
           <p class="info-box-label">Sprachen</p>
-          <p>Deutsch · Englisch · Arabisch · Persisch.<br>Video-Konsil für internationale Patienten verfügbar.</p>
+          <p>Deutsch · Englisch · Persisch.<br>Video-Konsil für internationale Patienten verfügbar.</p>
         </div>
       </div>
     </div>
@@ -736,7 +777,7 @@
         <p class="section-label">Autor</p>
         <h2 class="section-title">Über Dr. Mostafa Mosafer.</h2>
         <p>Dr. med. Mostafa Mosafer ist Facharzt für Orthopädie und Unfallchirurgie mit Subspezialisierung Wirbelsäulenchirurgie und Skoliose. Klinische Schwerpunkte: idiopathische und kongenitale sowie neuromuskuläre Skoliose, wachstumslenkende Verfahren bei Kindern, Vertebral Body Tethering, Spondylodese sowie Revisionschirurgie der Wirbelsäule.</p>
-        <p>Mitgliedschaften: Deutsche Wirbelsäulengesellschaft (DWG), EUROSPINE, Berufsverband für Orthopädie und Unfallchirurgie (BVOU). Ab August 2026 leitende klinische Verantwortung als Chefarzt der Abteilung für Kinderorthopädie und Skoliose am Klinikum Traunstein, parallel zur eigenen Praxis in Rosenheim. Behandlungsphilosophie: ehrliche Indikationsstellung, ergebnisoffene Beratung, persönliche Betreuung vom Erstgespräch bis zur Langzeit-Nachsorge — keine Team-Rotation, keine standardisierten Pfade ohne individuelle Prüfung.</p>
+        <p>Mitgliedschaften: Deutsche Wirbelsäulengesellschaft (DWG), EUROSPINE, Berufsverband für Orthopädie und Unfallchirurgie (BVOU), AO Spine, Scoliosis Research Society (SRS). Ab August 2026 leitende klinische Verantwortung als Chefarzt der Abteilung für Kinderorthopädie und Skoliose am Klinikum Traunstein, parallel zur eigenen Praxis in Rosenheim. Behandlungsphilosophie: ehrliche Indikationsstellung, ergebnisoffene Beratung, persönliche Betreuung vom Erstgespräch bis zur Langzeit-Nachsorge — keine Team-Rotation, keine standardisierten Pfade ohne individuelle Prüfung.</p>
         <p><strong>Letztes Review dieser Seite:</strong> 17. Mai 2026 durch Dr. med. Mostafa Mosafer.</p>
         <p><a href="praxis/ueber-dr-mosafer.html">→ Vollständiger Lebenslauf &amp; Werdegang</a></p>
 
@@ -752,7 +793,7 @@
       <div>
         <div class="info-box" style="margin-top:3.5rem">
           <p class="info-box-label">Autor</p>
-          <p><strong>Dr. med. Mostafa Mosafer</strong><br>Facharzt für Orthopädie &amp; Unfallchirurgie<br>Subspezialisierung Wirbelsäule &amp; Skoliose<br>DWG · EUROSPINE · BVOU</p>
+          <p><strong>Dr. med. Mostafa Mosafer</strong><br>Facharzt für Orthopädie &amp; Unfallchirurgie<br>Subspezialisierung Wirbelsäule &amp; Skoliose<br>DWG · EUROSPINE · BVOU · AO Spine · SRS</p>
         </div>
       </div>
     </div>

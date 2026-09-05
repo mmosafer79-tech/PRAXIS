@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-label="Skoliose und Wirbelsäulendeformitäten">
+  <circle cx="36" cy="36" r="35" fill="#0f2044"/>
+  <path d="M 40 14 C 30 20, 30 28, 37 34 C 44 40, 44 48, 34 56" fill="none" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/>
+  <g fill="#e8c97a">
+    <circle cx="40" cy="14" r="3.2"/>
+    <circle cx="33.5" cy="19.5" r="3.2"/>
+    <circle cx="31.5" cy="26.5" r="3.2"/>
+    <circle cx="34.5" cy="32.5" r="3.2"/>
+    <circle cx="40" cy="38" r="3.2"/>
+    <circle cx="41.5" cy="45" r="3.2"/>
+    <circle cx="38" cy="51.5" r="3.2"/>
+    <circle cx="34" cy="56" r="3.2"/>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 250" role="img" aria-labelledby="cw-title">
+  <title id="cw-title">Cobb-Winkel-Skala mit Therapiezonen im Wachstum</title>
+  <style>
+    .z-label { font: 700 13.5px 'DM Sans', system-ui, sans-serif; fill: #0f2044; }
+    .z-sub   { font: 400 12px 'DM Sans', system-ui, sans-serif; fill: #6b7a99; }
+    .z-deg   { font: 700 13px 'DM Sans', system-ui, sans-serif; fill: #0f2044; }
+    .z-head  { font: 400 20px Georgia, 'DM Serif Display', serif; fill: #0f2044; }
+  </style>
+  <text class="z-head" x="40" y="30">Cobb-Winkel und Therapie-Entscheidung <tspan style="font: 400 14px 'DM Sans', sans-serif; fill:#6b7a99">— im Wachstum (skelettal unreif)</tspan></text>
+  <text class="z-label" x="115" y="72" text-anchor="middle">Asymmetrie</text>
+  <text class="z-sub"   x="115" y="89" text-anchor="middle">keine Therapie nötig</text>
+  <text class="z-label" x="265" y="72" text-anchor="middle">Beobachtung</text>
+  <text class="z-sub"   x="265" y="89" text-anchor="middle">+ Schroth</text>
+  <text class="z-label" x="415" y="72" text-anchor="middle">Schroth</text>
+  <text class="z-sub"   x="415" y="89" text-anchor="middle">ggf. Korsett</text>
+  <text class="z-label" x="602" y="72" text-anchor="middle">Korsett</text>
+  <text class="z-sub"   x="602" y="89" text-anchor="middle">konsequent, 16–23 h/Tag</text>
+  <text class="z-label" x="827" y="72" text-anchor="middle" style="fill:#a8842f">OP-Indikation prüfen</text>
+  <text class="z-sub"   x="827" y="89" text-anchor="middle">bei dokumentierter Progression</text>
+  <rect x="40"  y="104" width="150" height="46" fill="#eef1f8"/>
+  <rect x="190" y="104" width="150" height="46" fill="#d4dff2"/>
+  <rect x="340" y="104" width="150" height="46" fill="#a9bfe0"/>
+  <rect x="490" y="104" width="225" height="46" fill="#5f7cb0"/>
+  <rect x="715" y="104" width="225" height="46" fill="#0f2044"/>
+  <rect x="715" y="104" width="225" height="4"  fill="#c9a84c"/>
+  <g stroke="#8e9dbd" stroke-width="1.5">
+    <line x1="40"  y1="150" x2="40"  y2="162"/>
+    <line x1="190" y1="150" x2="190" y2="162"/>
+    <line x1="340" y1="150" x2="340" y2="162"/>
+    <line x1="490" y1="150" x2="490" y2="162"/>
+    <line x1="715" y1="150" x2="715" y2="162"/>
+    <line x1="940" y1="150" x2="940" y2="162"/>
+  </g>
+  <text class="z-deg" x="40"  y="182" text-anchor="middle">0&#176;</text>
+  <text class="z-deg" x="190" y="182" text-anchor="middle">10&#176;</text>
+  <text class="z-deg" x="340" y="182" text-anchor="middle">20&#176;</text>
+  <text class="z-deg" x="490" y="182" text-anchor="middle">30&#176;</text>
+  <text class="z-deg" x="715" y="182" text-anchor="middle">45&#176;</text>
+  <text class="z-deg" x="940" y="182" text-anchor="middle">60&#176;+</text>
+  <text class="z-sub" x="190" y="212" text-anchor="middle">↑ ab 10&#176; spricht man von Skoliose</text>
+  <text class="z-sub" x="500" y="238" text-anchor="middle" style="font-style:italic">Messung im stehenden Wirbelsäulen-Ganzröntgen. Untersucher-Streuung typisch ±5&#176; — Entscheidungen folgen Trends im Verlauf, nicht einzelnen Graden.</text>
+</svg>

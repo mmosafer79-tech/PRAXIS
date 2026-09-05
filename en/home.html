@@ -119,6 +119,31 @@
       })();
     </script>
     <!-- End Matomo -->
+    <!-- Matomo Scroll-Tiefe (Weg B, kostenlos, cookielos) -->
+    <script>
+    (function(){
+      if(window.__matomoScrollDepth) return; window.__matomoScrollDepth=true;
+      var marks=[25,50,75,100], fired={};
+      function pct(){
+        var d=document.documentElement, b=document.body;
+        var sh=Math.max(d.scrollHeight,b.scrollHeight), ch=d.clientHeight;
+        var st=window.scrollY||d.scrollTop||0;
+        if(sh<=ch) return 100;
+        return Math.min(100, Math.round((st+ch)/sh*100));
+      }
+      function check(){
+        var p=pct();
+        marks.forEach(function(m){
+          if(p>=m && !fired[m]){ fired[m]=true;
+            if(window._paq){ _paq.push(['trackEvent','Scroll-Tiefe', m+'%', location.pathname]); }
+          }
+        });
+      }
+      var t; window.addEventListener('scroll', function(){ clearTimeout(t); t=setTimeout(check,200); }, {passive:true});
+      window.addEventListener('load', check);
+    })();
+    </script>
+    <!-- End Scroll-Tiefe -->
 </head>
 <body>
 <div class="doctolib-widget">
@@ -168,7 +193,7 @@
       <a href="../skoliose/zweitmeinung.html" style="display:inline-block;color:rgba(255,255,255,0.6);font-size:0.84rem;font-weight:400;text-decoration:none;padding:0.95rem 0;border-bottom:1px solid rgba(255,255,255,0.2)">Request a second opinion</a>
     </div>
     <div style="display:flex;gap:1.5rem;margin-top:4rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap">
-      <div><span style="font-size:0.65rem;color:rgba(255,255,255,0.35);letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:0.2rem">Languages</span><span style="font-size:0.82rem;color:rgba(255,255,255,0.7);font-weight:300">English · Arabic · Farsi · German</span></div>
+      <div><span style="font-size:0.65rem;color:rgba(255,255,255,0.35);letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:0.2rem">Languages</span><span style="font-size:0.82rem;color:rgba(255,255,255,0.7);font-weight:300">English · Farsi · German</span></div>
       <div><span style="font-size:0.65rem;color:rgba(255,255,255,0.35);letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:0.2rem">From August 2026</span><span style="font-size:0.82rem;color:rgba(255,255,255,0.7);font-weight:300">Chief of Paediatric Orthopaedics, Klinikum Traunstein</span></div>
     </div>
   </div>

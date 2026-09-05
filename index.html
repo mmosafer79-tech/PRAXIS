@@ -34,8 +34,8 @@
     :root{
       --navy:#0f2044;--navy-deep:#091530;--navy-mid:#1a3460;
       --blue-accent:#2a5298;--sky:#e8f0fc;
-      --white:#ffffff;--offwhite:#f7f9ff;
-      --gold:#c9a84c;
+      --white:#ffffff;--offwhite:#f7f9ff;--warm:#f4f2ee;
+      --gold:#c9a84c;--gold-light:#e8c97a;
       --text:#1a2a4a;--muted:#6b7a99;
       --border:rgba(15,32,68,0.1)
     }
@@ -205,6 +205,48 @@
     .doctolib-widget a.widget-call:hover,.doctolib-widget a.widget-mail:hover{background:#f4f2ee}
     .doctolib-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
 
+    /* ── Trust-Badge-Leiste (Baustein 01) ── */
+    .trust-bar{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:22px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 40px;max-width:1080px;margin:-2.5rem auto 0;position:relative;z-index:3;box-shadow:0 12px 40px rgba(15,32,68,0.08)}
+    .trust-bar .item{display:flex;align-items:center;gap:12px}
+    .trust-bar .mark{width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--gold-light);display:grid;place-items:center;font-family:'DM Serif Display',serif;font-size:0.82rem;flex-shrink:0}
+    .trust-bar .label{font-size:0.82rem;line-height:1.35}
+    .trust-bar .label strong{display:block;color:var(--navy);font-size:0.9rem}
+    .trust-bar .label span{color:var(--muted)}
+    .trust-bar-wrap{padding:0 4rem;position:relative}
+
+    /* ── Zahlen-Sektion (Baustein 02) ── */
+    .stats-section{background:var(--navy);padding:5.5rem 4rem;text-align:center}
+    .stats-section .section-label{justify-content:center;color:var(--gold)}
+    .stats-section .section-label::before{display:none}
+    .stats-section h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,2.5vw,2.6rem);color:white;margin-bottom:3rem}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 28px;max-width:1080px;margin:0 auto}
+    .stats .stat{text-align:center;padding:8px 12px}
+    .stats .num{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,4vw,3.1rem);color:var(--gold-light);line-height:1}
+    .stats .num sup{font-size:0.45em}
+    .stats .desc{color:#b8c4dd;font-size:0.88rem;margin-top:10px}
+    .stats .desc strong{color:var(--white);display:block;font-size:0.95rem;margin-bottom:2px}
+
+    /* ── Google-Bewertungen (Baustein 03) ── */
+    .rating-inline{display:inline-flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--border);border-radius:999px;padding:10px 22px 10px 16px}
+    .rating-inline .stars{display:flex;gap:2px}
+    .rating-inline .score{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--navy)}
+    .rating-inline .meta{font-size:0.78rem;color:var(--muted);line-height:1.3}
+    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1080px;margin:0 auto}
+    .review-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:14px}
+    .review-card blockquote{font-size:0.92rem;flex:1;margin:0}
+    .review-card .who{font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border);padding-top:12px}
+    .review-card .who strong{color:var(--navy);display:block}
+
+    /* ── Patientenstimmen (Baustein 04, HWG-konform) ── */
+    .voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .voice{background:var(--white);border-radius:12px;padding:30px 32px;border-top:3px solid var(--gold)}
+    .voice .context{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px}
+    .voice blockquote{font-family:'DM Serif Display',serif;font-size:1.08rem;color:var(--navy);margin:0 0 16px}
+    .voice .who{font-size:0.82rem;color:var(--muted)}
+
+    /* ── Schwerpunkt-Icons (Baustein 07) ── */
+    .schwerpunkt-icon{width:56px;height:56px;margin-bottom:1.2rem}
+
     /* ── Responsive ── */
     @media(max-width:1200px) and (min-width:961px){
       .home-hero{grid-template-columns:1fr 480px}
@@ -238,6 +280,10 @@
       .timeline-dot{top:0;margin-bottom:0.5rem}
       footer{flex-direction:column;padding:1.5rem;text-align:center}
       .doctolib-widget{bottom:1rem;right:1rem}
+      .trust-bar-wrap{padding:0 1.5rem}
+      .trust-bar{margin-top:-1.5rem}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .review-grid,.voice-grid{grid-template-columns:1fr}
     }
 
     @media(max-width:600px){
@@ -251,6 +297,8 @@
       .status-strip{padding:1.5rem 1.25rem}
       .status-strip-inner{flex-direction:column;gap:0.5rem}
       .footer-links{flex-direction:column;gap:0.75rem;align-items:center}
+      .stats{grid-template-columns:1fr}
+      .stats-section{padding:3.5rem 1.25rem}
     }
   </style>
   <script type="application/ld+json">
@@ -320,6 +368,31 @@
       })();
     </script>
     <!-- End Matomo -->
+    <!-- Matomo Scroll-Tiefe (Weg B, kostenlos, cookielos) -->
+    <script>
+    (function(){
+      if(window.__matomoScrollDepth) return; window.__matomoScrollDepth=true;
+      var marks=[25,50,75,100], fired={};
+      function pct(){
+        var d=document.documentElement, b=document.body;
+        var sh=Math.max(d.scrollHeight,b.scrollHeight), ch=d.clientHeight;
+        var st=window.scrollY||d.scrollTop||0;
+        if(sh<=ch) return 100;
+        return Math.min(100, Math.round((st+ch)/sh*100));
+      }
+      function check(){
+        var p=pct();
+        marks.forEach(function(m){
+          if(p>=m && !fired[m]){ fired[m]=true;
+            if(window._paq){ _paq.push(['trackEvent','Scroll-Tiefe', m+'%', location.pathname]); }
+          }
+        });
+      }
+      var t; window.addEventListener('scroll', function(){ clearTimeout(t); t=setTimeout(check,200); }, {passive:true});
+      window.addEventListener('load', check);
+    })();
+    </script>
+    <!-- End Scroll-Tiefe -->
 </head>
 <body>
 
@@ -399,9 +472,17 @@
     <h1>Wirbelsäule<br>und Skoliose –<br><em>namentliche<br>Expertise.</em></h1>
     <p class="hero-sub">Spezialisierte Praxis für Skoliose, komplexe Wirbelsäulenchirurgie und Revisionseingriffe. Persönliche Betreuung vom Erstgespräch bis zur Langzeit-Nachsorge.</p>
     <div class="hero-actions">
-      <a href="https://doctolib.de/praxis/vogtareuth/wirbelsaeulen-und-skoliosezentrum-dr-med-mostafa-mosafer" target="_blank" rel="noopener" class="btn-primary">Termin vereinbaren</a>
+      <a href="https://doctolib.de/praxis/vogtareuth/wirbelsaeulen-und-skoliosezentrum-dr-med-mostafa-mosafer" target="_blank" rel="noopener" class="btn-gold">Online-Termin buchen</a>
       <a href="skoliose/zweitmeinung.html" class="btn-ghost">Zweitmeinung anfragen →</a>
     </div>
+    <!-- Baustein 03 · Variante A (Google-Bewertungen inline) — erst aktivieren, sobald echte Rezensionen vorliegen:
+    <div class="rating-inline" style="margin-top:1.5rem">
+      <span class="score">4,9</span>
+      <span class="stars" aria-label="4,9 von 5 Sternen">★★★★★</span>
+      <span class="meta">27 Google-Rezensionen</span>
+    </div>
+    -->
+
     <div class="hero-credentials">
       <span class="cred-value">Facharzt für Orthopädie und Unfallchirurgie</span>
       <span class="cred-value">Schwerpunkt Skoliose &amp; Wirbelsäulendeformitäten</span>
@@ -413,6 +494,36 @@
   </div>
 </section>
 
+<div class="trust-bar-wrap">
+  <!-- Baustein 01 · Trust-Badge-Leiste. Kreis-Monogramme sind Platzhalter; echte Logos erst nach schriftlicher Freigabe der Organisationen als <img> einsetzen. -->
+  <div class="trust-bar">
+    <div class="item">
+      <div class="mark">KT</div>
+      <div class="label"><strong>Klinikum Traunstein</strong><span>Chefarzt der Abteilung für Kinderorthopädie und Skoliose</span></div>
+    </div>
+    <div class="item">
+      <div class="mark">DWG</div>
+      <div class="label"><strong>Deutsche Wirbelsäulengesellschaft</strong><span>Mitglied</span></div>
+    </div>
+    <div class="item">
+      <div class="mark">ES</div>
+      <div class="label"><strong>EUROSPINE</strong><span>The Spine Society of Europe</span></div>
+    </div>
+    <div class="item">
+      <div class="mark">BVOU</div>
+      <div class="label"><strong>Berufsverband Orthopädie</strong><span>und Unfallchirurgie</span></div>
+    </div>
+    <div class="item">
+      <div class="mark">AO</div>
+      <div class="label"><strong>AO Spine</strong><span>Mitglied</span></div>
+    </div>
+    <div class="item">
+      <div class="mark">SRS</div>
+      <div class="label"><strong>Scoliosis Research Society</strong><span>Mitglied</span></div>
+    </div>
+  </div>
+</div>
+
 <section class="section schwerpunkte">
   <div class="section-inner">
     <p class="section-label">Behandlungsschwerpunkte</p>
@@ -420,6 +531,7 @@
     <p class="section-intro">Drei klinische Schwerpunkte, eine durchgehende Betreuung. Jeder Weg führt zu ausführlichen Fachseiten mit realistischen Einordnungen.</p>
     <div class="schwerpunkte-grid">
       <div class="schwerpunkt-card">
+        <img src="assets/icon-skoliose.svg" alt="" class="schwerpunkt-icon" width="56" height="56" loading="lazy">
         <p class="schwerpunkt-num">01 · Skoliose</p>
         <h3>Skoliose &amp; Wirbelsäulen­deformitäten</h3>
         <p>Von der Erstdiagnose über Schroth und Korsett bis zur operativen Korrektur – für Jugendliche, Erwachsene und Kinder mit wachstumslenkenden Systemen.</p>
@@ -430,6 +542,7 @@
           </ul>
       </div>
       <div class="schwerpunkt-card">
+        <img src="assets/icon-chirurgie.svg" alt="" class="schwerpunkt-icon" width="56" height="56" loading="lazy">
         <p class="schwerpunkt-num">02 · Chirurgie</p>
         <h3>Wirbelsäulen­chirurgie</h3>
         <p>Bandscheibenvorfall, Spinalkanalstenose, minimalinvasive Fusion (TLIF/XLIF/OLIF), PEEK-Stab und spezialisierte Revisionseingriffe – konservativ, wenn möglich; operativ, wenn nötig.</p>
@@ -442,6 +555,7 @@
         </ul>
       </div>
       <div class="schwerpunkt-card">
+        <img src="assets/icon-konservativ.svg" alt="" class="schwerpunkt-icon" width="56" height="56" loading="lazy">
         <p class="schwerpunkt-num">03 · Konservativ</p>
         <h3>Konservative &amp; biologische Therapie</h3>
         <p>Bildgesteuerte Injektionen (PRT, Facettengelenk), biologische Verfahren (PRP/ACP) und Stoßwellentherapie – gezielt eingesetzt bei klarer Indikation.</p>
@@ -452,6 +566,25 @@
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <p class="section-label">Erfahrung, die man messen kann</p>
+  <h2>Spezialisierung in Zahlen.</h2>
+  <div class="stats">
+    <div class="stat"><div class="num">15</div>
+      <div class="desc"><strong>Jahre Berufserfahrung</strong>Orthopädie, Unfall- und Wirbelsäulenchirurgie</div></div>
+    <div class="stat"><div class="num">1500<sup>+</sup></div>
+      <div class="desc"><strong>Wirbelsäulen-Operationen</strong>über die gesamte Laufbahn</div></div>
+    <div class="stat"><div class="num">100<sup>+</sup></div>
+      <div class="desc"><strong>Komplexe Eingriffe pro Jahr</strong>Deformitäten und Revisionen</div></div>
+    <div class="stat"><div class="num">24</div>
+      <div class="desc"><strong>Fragen der Zweitmeinungs-Methode</strong>strukturiert, unabhängig, ergebnisoffen</div></div>
+    <div class="stat"><div class="num">12<sup>+</sup></div>
+      <div class="desc"><strong>Monate strukturierte Nachsorge</strong>bei Kindern über viele Jahre</div></div>
+    <div class="stat"><div class="num">3</div>
+      <div class="desc"><strong>Sprachen in der Betreuung</strong>Deutsch · Englisch · Persisch</div></div>
   </div>
 </section>
 
@@ -500,6 +633,33 @@
   </div>
 </section>
 
+<!-- Baustein 04 · Patientenstimmen (HWG-konform). NICHT live schalten, solange die Texte Beispieltexte sind.
+     Vor Livegang: durch echte, schriftlich freigegebene Erfahrungsberichte ersetzen (keine Heilversprechen,
+     keine Erfolgsgarantien, keine "schmerzfrei/geheilt"-Aussagen — gilt für alle Stimmen).
+<section class="section" style="background:var(--warm)">
+  <div class="section-inner">
+    <p class="section-label">Erfahrungen</p>
+    <h2 class="section-title">Was Patientinnen und Patienten berichten.</h2>
+    <div class="voice-grid">
+      <article class="voice">
+        <div class="context">Zweitmeinung · Erwachsenenskoliose</div>
+        <blockquote>„Ich kam mit einer OP-Empfehlung und vielen offenen Fragen. Die Zweitmeinung
+        war strukturiert und ergebnisoffen — am Ende hatte ich zum ersten Mal das Gefühl,
+        meine Optionen wirklich zu verstehen."</blockquote>
+        <div class="who">Patientin, 54</div>
+      </article>
+      <article class="voice">
+        <div class="context">Korsett-Therapie · Jugendliche mit AIS</div>
+        <blockquote>„Uns wurde nichts beschönigt: 16 bis 23 Stunden Tragezeit sind anstrengend.
+        Aber wir wussten immer, warum — und die Verlaufskontrollen gaben uns Sicherheit,
+        auf dem richtigen Weg zu sein."</blockquote>
+        <div class="who">Eltern einer 13-jährigen Patientin</div>
+      </article>
+    </div>
+  </div>
+</section>
+-->
+
 <section class="section situationen">
   <div class="section-inner">
     <p class="section-label">Für spezifische Situationen</p>
@@ -516,7 +676,7 @@
       <a href="patienten/international.html" class="situation-card">
         <span class="situation-tag">International</span>
         <h4>I am travelling to Germany for care.</h4>
-        <span class="situation-context">English · عربي · فارسی</span>
+        <span class="situation-context">English · فارسی</span>
         <p>Strukturierte, mehrsprachige Begleitung für internationale Patienten – Vorab-Begutachtung, Video-Zweitmeinung und langfristige Video-Nachsorge.</p>
         <span class="situation-link">→ International patients</span>
       </a>
@@ -607,6 +767,35 @@
     <p style="color:var(--muted);font-size:0.85rem;margin-top:1.5rem">Oder telefonisch <a href="tel:+4980313045672" style="color:var(--navy)">+49 (0)8031 3045672</a> (Mo–Fr 08–12 Uhr, Mi &amp; Do bis 16 Uhr) · per E-Mail <a href="mailto:info@mosafer-spine.de" style="color:var(--navy)">info@mosafer-spine.de</a></p>
   </div>
 </section>
+
+<!-- Baustein 03 · Variante B (Google-Bewertungen). Sternwert, Anzahl und Zitate sind Platzhalter — NICHT
+     live schalten, bis genügend echte Rezensionen vorliegen. DSGVO: kein Live-Google-Widget einbetten;
+     Rezensionen statisch/build-time pflegen, Zitate nur mit Einwilligung der Verfasser, Namen abgekürzt.
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">Erfahrungen</p>
+    <h2 class="section-title">Was Patientinnen und Patienten berichten.</h2>
+    <div class="review-grid">
+      <article class="review-card">
+        <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+        <blockquote>„[Platzhalter — echte Google-Rezension, ungekürzt und unverändert]"</blockquote>
+        <div class="who"><strong>M. K.</strong>Google-Rezension</div>
+      </article>
+      <article class="review-card">
+        <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+        <blockquote>„[Platzhalter — echte Google-Rezension, ungekürzt und unverändert]"</blockquote>
+        <div class="who"><strong>—</strong>Google-Rezension</div>
+      </article>
+      <article class="review-card">
+        <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+        <blockquote>„[Platzhalter — echte Google-Rezension, ungekürzt und unverändert]"</blockquote>
+        <div class="who"><strong>—</strong>Google-Rezension</div>
+      </article>
+    </div>
+    <p style="margin-top:2rem"><a href="https://www.google.com/maps/place/?q=place_id:PLACE_ID" rel="noopener">Alle Rezensionen auf Google ansehen →</a></p>
+  </div>
+</section>
+-->
 
 <footer>
   <p>© 2026 Mosafer Spine · Dr. Mostafa Mosafer</p>

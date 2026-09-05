@@ -83,6 +83,31 @@
       })();
     </script>
     <!-- End Matomo -->
+    <!-- Matomo Scroll-Tiefe (Weg B, kostenlos, cookielos) -->
+    <script>
+    (function(){
+      if(window.__matomoScrollDepth) return; window.__matomoScrollDepth=true;
+      var marks=[25,50,75,100], fired={};
+      function pct(){
+        var d=document.documentElement, b=document.body;
+        var sh=Math.max(d.scrollHeight,b.scrollHeight), ch=d.clientHeight;
+        var st=window.scrollY||d.scrollTop||0;
+        if(sh<=ch) return 100;
+        return Math.min(100, Math.round((st+ch)/sh*100));
+      }
+      function check(){
+        var p=pct();
+        marks.forEach(function(m){
+          if(p>=m && !fired[m]){ fired[m]=true;
+            if(window._paq){ _paq.push(['trackEvent','Scroll-Tiefe', m+'%', location.pathname]); }
+          }
+        });
+      }
+      var t; window.addEventListener('scroll', function(){ clearTimeout(t); t=setTimeout(check,200); }, {passive:true});
+      window.addEventListener('load', check);
+    })();
+    </script>
+    <!-- End Scroll-Tiefe -->
 </head>
 <body>
 
@@ -219,6 +244,7 @@
     <h2 class="section-title">Ihr Anliegen<br>persönlich besprechen.</h2>
     <p class="section-intro" style="margin-left:auto;margin-right:auto">Vereinbaren Sie ein Erstgespräch – wir ordnen Ihre Diagnose ein und zeigen die konservativen wie operativen Möglichkeiten auf.</p>
     <p style="margin-top:1.5rem"><a href="https://doctolib.de/praxis/vogtareuth/wirbelsaeulen-und-skoliosezentrum-dr-med-mostafa-mosafer" class="nav-cta" style="display:inline-block;padding:0.9rem 2rem">Termin über Doctolib</a></p>
+    <p style="color:var(--muted);font-size:0.85rem;margin-top:1.5rem">Oder telefonisch <a href="tel:+4980313045672" style="color:var(--navy)">+49 (0)8031 3045672</a> (Mo–Fr 08–12 Uhr, Mi &amp; Do bis 16 Uhr) · per E-Mail <a href="mailto:info@mosafer-spine.de" style="color:var(--navy)">info@mosafer-spine.de</a></p>
   </div>
 </section>
 

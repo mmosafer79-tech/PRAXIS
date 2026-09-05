@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-label="Konservative und biologische Therapie">
+  <circle cx="36" cy="36" r="35" fill="#0f2044"/>
+  <g stroke="#e8c97a" stroke-width="1.8" opacity="0.65">
+    <circle cx="27" cy="45" r="10" fill="none"/>
+    <line x1="27" y1="31" x2="27" y2="38"/>
+    <line x1="27" y1="52" x2="27" y2="59"/>
+    <line x1="13" y1="45" x2="20" y2="45"/>
+    <line x1="34" y1="45" x2="41" y2="45"/>
+  </g>
+  <g transform="rotate(45 46 26)">
+    <rect x="40" y="21" width="16" height="10" rx="2" fill="none" stroke="#c9a84c" stroke-width="2.5"/>
+    <line x1="56" y1="26" x2="62" y2="26" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="33" y1="26" x2="40" y2="26" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="28" y1="26" x2="33" y2="26" stroke="#e8c97a" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+</svg>

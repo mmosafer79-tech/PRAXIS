@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 270" role="img" aria-labelledby="bp-title">
+  <title id="bp-title">Behandlungspfad bei Skoliose im Wachstum: Beobachtung, Schroth-Therapie, Korsett, OP-Diskussion</title>
+  <style>
+    .t-title { font: 400 20px Georgia, 'DM Serif Display', serif; fill: #0f2044; }
+    .t-cobb  { font: 700 13px 'DM Sans', system-ui, sans-serif; fill: #c9a84c; letter-spacing: 0.06em; }
+    .t-desc  { font: 400 12.5px 'DM Sans', system-ui, sans-serif; fill: #6b7a99; }
+    .t-num   { font: 400 19px Georgia, 'DM Serif Display', serif; fill: #e8c97a; }
+  </style>
+  <line x1="130" y1="52" x2="850" y2="52" stroke="#dde4f2" stroke-width="2"/>
+  <polygon points="858,52 844,45 844,59" fill="#c9a84c"/>
+  <circle cx="130" cy="52" r="27" fill="#0f2044"/>
+  <text class="t-num" x="130" y="59" text-anchor="middle">1</text>
+  <text class="t-title" x="130" y="118" text-anchor="middle">Beobachtung</text>
+  <text class="t-cobb" x="130" y="143" text-anchor="middle">COBB &lt; 20&#176;</text>
+  <text class="t-desc" x="130" y="168" text-anchor="middle">Verlaufskontrolle alle</text>
+  <text class="t-desc" x="130" y="186" text-anchor="middle">4–6 Monate, Röntgen</text>
+  <text class="t-desc" x="130" y="204" text-anchor="middle">stets im Stehen</text>
+  <circle cx="370" cy="52" r="27" fill="#0f2044"/>
+  <text class="t-num" x="370" y="59" text-anchor="middle">2</text>
+  <text class="t-title" x="370" y="118" text-anchor="middle">Schroth-Therapie</text>
+  <text class="t-cobb" x="370" y="143" text-anchor="middle">AB 10–20&#176;</text>
+  <text class="t-desc" x="370" y="168" text-anchor="middle">Dreidimensionale, atem-</text>
+  <text class="t-desc" x="370" y="186" text-anchor="middle">orientierte Krankengymnastik,</text>
+  <text class="t-desc" x="370" y="204" text-anchor="middle">tägliches Eigenprogramm</text>
+  <circle cx="610" cy="52" r="27" fill="#0f2044"/>
+  <text class="t-num" x="610" y="59" text-anchor="middle">3</text>
+  <text class="t-title" x="610" y="118" text-anchor="middle">Korsett</text>
+  <text class="t-cobb" x="610" y="143" text-anchor="middle">20–45&#176;</text>
+  <text class="t-desc" x="610" y="168" text-anchor="middle">16–23 Std. Tragezeit pro Tag,</text>
+  <text class="t-desc" x="610" y="186" text-anchor="middle">Cheneau-Konzept, Kontrolle</text>
+  <text class="t-desc" x="610" y="204" text-anchor="middle">alle 4–6 Monate</text>
+  <circle cx="850" cy="52" r="27" fill="#c9a84c"/>
+  <text class="t-num" x="850" y="59" text-anchor="middle" style="fill:#0f2044">4</text>
+  <text class="t-title" x="850" y="118" text-anchor="middle">OP-Diskussion</text>
+  <text class="t-cobb" x="850" y="143" text-anchor="middle">&gt; 45&#176;</text>
+  <text class="t-desc" x="850" y="168" text-anchor="middle">Nur bei dokumentierter</text>
+  <text class="t-desc" x="850" y="186" text-anchor="middle">Progression trotz konsequenter</text>
+  <text class="t-desc" x="850" y="204" text-anchor="middle">konservativer Therapie</text>
+  <text class="t-desc" x="500" y="238" text-anchor="middle" style="font-style:italic">Orientierungsrahmen für die adoleszente idiopathische Skoliose (AIS) im Wachstum — kein Algorithmus.</text>
+  <text class="t-desc" x="500" y="255" text-anchor="middle" style="font-style:italic">Die individuelle Entscheidung berücksichtigt Progression, Sagittalbalance und Lebenssituation.</text>
+</svg>

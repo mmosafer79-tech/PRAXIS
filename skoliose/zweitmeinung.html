@@ -74,6 +74,31 @@
       })();
     </script>
     <!-- End Matomo -->
+    <!-- Matomo Scroll-Tiefe (Weg B, kostenlos, cookielos) -->
+    <script>
+    (function(){
+      if(window.__matomoScrollDepth) return; window.__matomoScrollDepth=true;
+      var marks=[25,50,75,100], fired={};
+      function pct(){
+        var d=document.documentElement, b=document.body;
+        var sh=Math.max(d.scrollHeight,b.scrollHeight), ch=d.clientHeight;
+        var st=window.scrollY||d.scrollTop||0;
+        if(sh<=ch) return 100;
+        return Math.min(100, Math.round((st+ch)/sh*100));
+      }
+      function check(){
+        var p=pct();
+        marks.forEach(function(m){
+          if(p>=m && !fired[m]){ fired[m]=true;
+            if(window._paq){ _paq.push(['trackEvent','Scroll-Tiefe', m+'%', location.pathname]); }
+          }
+        });
+      }
+      var t; window.addEventListener('scroll', function(){ clearTimeout(t); t=setTimeout(check,200); }, {passive:true});
+      window.addEventListener('load', check);
+    })();
+    </script>
+    <!-- End Scroll-Tiefe -->
 </head>
 <body>
 <div class="doctolib-widget">
@@ -193,7 +218,7 @@
         </div>
         <div class="info-box">
           <p class="info-box-label">International</p>
-          <p>Für Patienten aus dem Ausland: Video-Zweitmeinung auf Englisch, Arabisch oder Persisch möglich. Alle Details auf der <a href="../patienten/international.html" style="color:var(--blue-accent)">International-Seite</a>.</p>
+          <p>Für Patienten aus dem Ausland: Video-Zweitmeinung auf Englisch oder Persisch möglich. Alle Details auf der <a href="../patienten/international.html" style="color:var(--blue-accent)">International-Seite</a>.</p>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ Mosafer Spine ist ein spezialisiertes Zentrum für Wirbelsäulenchirurgie und Sk
 - Name: Dr. med. Mostafa Mosafer
 - Fachgebiet: Orthopädie und Unfallchirurgie, Spezielle Wirbelsäulenchirurgie
 - Standort: Rosenheim, Bayern, Deutschland
-- Sprachen: Deutsch, Englisch, Arabisch, Farsi
+- Sprachen: Deutsch, Englisch, Farsi
 
 ## Leistungsspektrum
 

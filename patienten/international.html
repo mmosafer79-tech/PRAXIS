@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>International Patients · Mosafer Spine</title>
-  <meta name="description" content="International patients at Mosafer Spine Rosenheim – second opinion, video consultation, multilingual care in English, Arabic, Farsi.">
+  <meta name="description" content="International patients at Mosafer Spine Rosenheim – second opinion, video consultation, multilingual care in English and Farsi.">
   <link rel="canonical" href="https://www.mosafer-spine.de/patienten/international.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Mosafer Spine">
   <meta property="og:url" content="https://www.mosafer-spine.de/patienten/international.html">
   <meta property="og:title" content="International Patients · Mosafer Spine">
-  <meta property="og:description" content="International patients at Mosafer Spine Rosenheim – second opinion, video consultation, multilingual care in English, Arabic, Farsi.">
+  <meta property="og:description" content="International patients at Mosafer Spine Rosenheim – second opinion, video consultation, multilingual care in English and Farsi.">
 <meta property="og:image" content="https://www.mosafer-spine.de/uploads/og-share-1200x630.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -68,6 +68,31 @@
       })();
     </script>
     <!-- End Matomo -->
+    <!-- Matomo Scroll-Tiefe (Weg B, kostenlos, cookielos) -->
+    <script>
+    (function(){
+      if(window.__matomoScrollDepth) return; window.__matomoScrollDepth=true;
+      var marks=[25,50,75,100], fired={};
+      function pct(){
+        var d=document.documentElement, b=document.body;
+        var sh=Math.max(d.scrollHeight,b.scrollHeight), ch=d.clientHeight;
+        var st=window.scrollY||d.scrollTop||0;
+        if(sh<=ch) return 100;
+        return Math.min(100, Math.round((st+ch)/sh*100));
+      }
+      function check(){
+        var p=pct();
+        marks.forEach(function(m){
+          if(p>=m && !fired[m]){ fired[m]=true;
+            if(window._paq){ _paq.push(['trackEvent','Scroll-Tiefe', m+'%', location.pathname]); }
+          }
+        });
+      }
+      var t; window.addEventListener('scroll', function(){ clearTimeout(t); t=setTimeout(check,200); }, {passive:true});
+      window.addEventListener('load', check);
+    })();
+    </script>
+    <!-- End Scroll-Tiefe -->
 </head>
 <body>
 <div class="doctolib-widget">
@@ -115,7 +140,6 @@
   <p class="page-hero-sub">Structured, multilingual support for international patients – from remote second opinion to in-person surgery and long-term video follow-up.</p>
   <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
     <span style="font-size:0.8rem;color:rgba(255,255,255,0.5);padding:0.4rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:3px">English</span>
-    <span style="font-size:0.8rem;color:rgba(255,255,255,0.5);padding:0.4rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:3px" dir="rtl">العربية</span>
     <span style="font-size:0.8rem;color:rgba(255,255,255,0.5);padding:0.4rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:3px" dir="rtl">فارسی</span>
     <span style="font-size:0.8rem;color:rgba(255,255,255,0.5);padding:0.4rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:3px">Deutsch</span>
   </div>
@@ -127,7 +151,7 @@
   <p class="section-intro">You don't need to travel to get a first opinion. We start remotely and only ask you to travel when it makes clinical sense.</p>
   <ul class="steps">
     <li class="step"><span class="step-num">01</span><div class="step-body"><h4>Remote pre-assessment</h4><p>Send us your imaging (MRI, X-rays), reports and previous treatment history by email or secure file transfer. We review and respond within 48 hours with an initial clinical assessment.</p></div></li>
-    <li class="step"><span class="step-num">02</span><div class="step-body"><h4>Video second opinion</h4><p>A structured video consultation with Dr. Mosafer – in English, Arabic or Farsi. We review your case in detail, discuss options and give you a written summary. No travel required for this step.</p></div></li>
+    <li class="step"><span class="step-num">02</span><div class="step-body"><h4>Video second opinion</h4><p>A structured video consultation with Dr. Mosafer – in English or Farsi. We review your case in detail, discuss options and give you a written summary. No travel required for this step.</p></div></li>
     <li class="step"><span class="step-num">03</span><div class="step-body"><h4>In-person visit (if indicated)</h4><p>If surgery or in-person examination is needed, we coordinate your appointment, assist with logistics planning and ensure everything is prepared for your arrival.</p></div></li>
     <li class="step"><span class="step-num">04</span><div class="step-body"><h4>Surgery &amp; hospital stay</h4><p>Surgery at Klinikum Traunstein (from August 2026). Typical hospital stay 5–10 days depending on procedure. We coordinate your care team, interpreter support and discharge planning.</p></div></li>
     <li class="step"><span class="step-num">05</span><div class="step-body"><h4>Video follow-up from home</h4><p>After you return home, we continue structured follow-up via video. You send imaging digitally; we review and provide written reports. No need to travel for routine check-ups.</p></div></li>
@@ -153,7 +177,7 @@
         <h4>Location</h4>
         <p>Mosafer Spine, Rosenheim – 60 km southeast of Munich, easily reachable from Munich Airport (MUC) by train or car.</p>
         <h4>Language</h4>
-        <p>Dr. Mosafer speaks English, Arabic and Farsi fluently. Written reports can be issued in English.</p>
+        <p>Dr. Mosafer speaks English and Farsi fluently. Written reports can be issued in English.</p>
         <h4>Costs &amp; insurance</h4>
         <p>The Rosenheim practice holds a German statutory health insurance licence (Kassenzulassung). Patients covered by a German statutory health insurance fund are treated through their fund, regardless of nationality.</p>
         <p>Patients from abroad without German statutory cover are treated on a private/self-pay basis. We issue detailed cost estimates in advance. We work with international insurance companies and can provide necessary documentation for reimbursement claims.</p>
