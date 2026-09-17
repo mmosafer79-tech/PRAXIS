@@ -47,7 +47,9 @@ RewriteRule ^praxis/?$ /praxis/ueber-dr-mosafer.html [R=301,L]
 RewriteRule ^konservativ/?$ /konservativ/prt-facettengelenksinfiltration.html [R=301,L]
 RewriteRule ^skoliose/?$ /skoliose-spezialist.html [R=301,L]
 # Ergänzt 17.09.2026: lieferten live 403, von Google noch nicht gemeldet.
-RewriteRule ^patienten/?$ /patienten/international.html [R=301,L]
+# Ziel ist bewusst die deutsche Seite: international.html ist lang="en",
+# eine deutsche Verzeichnis-URL darf nicht auf eine englische Seite zeigen.
+RewriteRule ^patienten/?$ /patienten/privatpatienten.html [R=301,L]
 RewriteRule ^wirbelsaeulenchirurgie/?$ /leistungen.html [R=301,L]
 # /en/ lieferte 200 mit dem Inhalt von home.html (Duplikat trotz korrektem
 # Canonical) — sauberer als 301 auf die kanonische Adresse.
