@@ -28,11 +28,30 @@ RewriteRule ^diagnostik\.html$ /skoliose/erstdiagnose.html [R=301,L]
 RewriteRule ^revisionschirurgie\.html$ /wirbelsaeulenchirurgie/revision.html [R=301,L]
 RewriteRule ^operative-chirurgie\.html$ /skoliose/operative-behandlung.html [R=301,L]
 
+# Restbestand der FRÜHEREN Website, der noch physisch auf dem Strato-Webspace
+# liegt (17.09.2026 gefunden). Die Dateien sind nicht im Git-Repo, waren aber
+# live mit "index, follow" erreichbar und enthielten veraltete Angaben
+# (u. a. "Kinderorthopädie", Vogtareuth als aktuelle Position, "2.000 Eingriffe",
+# alte Doctolib-Links). Ursache: deploy-mosafer-spine.sh lädt nur hoch (put -r)
+# und löscht nie. Eine RewriteRule greift VOR der Dateiauslieferung, die Seiten
+# sind damit unschädlich, auch solange die Dateien noch auf dem Server liegen.
+RewriteRule ^kindliche-deformitaeten\.html$ /skoliose-spezialist.html [R=301,L]
+RewriteRule ^skoliose-deformitaeten\.html$ /skoliose-spezialist.html [R=301,L]
+RewriteRule ^konservative-therapie\.html$ /leistungen.html [R=301,L]
+# Alt-Duplikat im Wurzelverzeichnis; die gültige Seite liegt unter /praxis/.
+RewriteRule ^nachsorge\.html$ /praxis/nachsorge.html [R=301,L]
+
 # Verzeichnis-URLs ohne Index-Datei → relevante Seite (vermeidet 403)
 # Google entdeckt Verzeichnis-Pfade durch URL-Kürzen automatisch.
 RewriteRule ^praxis/?$ /praxis/ueber-dr-mosafer.html [R=301,L]
 RewriteRule ^konservativ/?$ /konservativ/prt-facettengelenksinfiltration.html [R=301,L]
 RewriteRule ^skoliose/?$ /skoliose-spezialist.html [R=301,L]
+# Ergänzt 17.09.2026: lieferten live 403, von Google noch nicht gemeldet.
+RewriteRule ^patienten/?$ /patienten/international.html [R=301,L]
+RewriteRule ^wirbelsaeulenchirurgie/?$ /leistungen.html [R=301,L]
+# /en/ lieferte 200 mit dem Inhalt von home.html (Duplikat trotz korrektem
+# Canonical) — sauberer als 301 auf die kanonische Adresse.
+RewriteRule ^en/?$ /en/home.html [R=301,L]
 
 # Interne Dokumentation nicht öffentlich auslieferbar
 RewriteRule ^docs(/.*)?$ - [F,L]
