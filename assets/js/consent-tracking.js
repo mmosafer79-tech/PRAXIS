@@ -176,6 +176,8 @@
     if (!hasConsent()) return;
     gtagSafe('event', 'conversion', { send_to: sendTo });
     gtagSafe('event', eventName); // zusätzlich als GA4-Ereignis
+    // Zusätzlich an Matomo, als google-unabhängige Zweitmessung.
+    if (window._paq) window._paq.push(['trackEvent', 'Termin', eventName]);
   }
 
   function bindConversions() {
@@ -188,7 +190,9 @@
         trackConversion(CONVERSION_ANRUF, 'anruf_klick');
       } else if (href.indexOf('mailto:') === 0) {
         trackConversion(CONVERSION_TERMIN, 'email_klick');
-      } else if (href.indexOf('doctolib') !== -1) {
+      } else if (href.indexOf('doctolib') !== -1 || href.indexOf('termin.html') !== -1) {
+        // termin.html ist die eigene Weiterleitungsseite zu Doctolib (seit 72314a1,
+        // 14.09.2026). Ohne diese Bedingung feuert die Termin-Conversion nicht mehr.
         trackConversion(CONVERSION_TERMIN, 'termin_doctolib');
       }
     }, true);
