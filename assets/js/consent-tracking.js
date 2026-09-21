@@ -171,13 +171,17 @@
 
   /* --- Conversion-Tracking -------------------------------------------- */
   function trackConversion(sendTo, eventName) {
-    // Ohne Einwilligung wird nichts gesendet; Consent Mode würde zwar ohnehin
-    // blocken, aber so entsteht gar kein Request.
+    // Matomo läuft cookielos (disableCookies + setDoNotTrack) und misst
+    // Seitenaufrufe bereits ohne Einwilligung. Dieses Ereignis liegt daher
+    // konsistent VOR dem Consent-Gate — nur so taugt es als google-unabhängige
+    // Zweitmessung. Es werden dabei keine Cookies gesetzt.
+    if (window._paq) window._paq.push(['trackEvent', 'Termin', eventName]);
+
+    // Ab hier nur mit Einwilligung: Google Ads / GA4. Consent Mode würde zwar
+    // ohnehin blocken, aber so entsteht gar kein Request.
     if (!hasConsent()) return;
     gtagSafe('event', 'conversion', { send_to: sendTo });
     gtagSafe('event', eventName); // zusätzlich als GA4-Ereignis
-    // Zusätzlich an Matomo, als google-unabhängige Zweitmessung.
-    if (window._paq) window._paq.push(['trackEvent', 'Termin', eventName]);
   }
 
   function bindConversions() {
