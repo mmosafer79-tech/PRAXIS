@@ -155,12 +155,13 @@
       window._paq.push([heatmapAn ? 'HeatmapSessionRecording::enable' : 'HeatmapSessionRecording::disable']);
     }
 
-    // Widerruf nach bereits geladenem Tag: Google-Cookies entfernen und neu laden,
-    // damit keine weiteren Meldungen an Google gehen. (Beim Seitenstart mit gespeicherter
-    // Ablehnung ist googleLoaded false, daher kein Neuladen.)
-    if (!granted && googleLoaded) {
+    // Ablehnung/Widerruf: Google-Cookies entfernen, auch Reste aus früheren Besuchen mit Zustimmung
+    // (z. B. vor Einführung des Nachladens). Neu geladen wird nur, wenn das Tag in dieser
+    // Seitenansicht schon aktiv war, damit keine weiteren Meldungen an Google gehen.
+    // (Beim Seitenstart mit gespeicherter Ablehnung ist googleLoaded false, daher kein Neuladen.)
+    if (!granted) {
       try { deleteGoogleCookies(); } catch (e) { /* ignorieren */ }
-      window.location.reload();
+      if (googleLoaded) window.location.reload();
     }
   }
 
