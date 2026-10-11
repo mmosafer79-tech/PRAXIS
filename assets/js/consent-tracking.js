@@ -1,14 +1,16 @@
 /*
  * Mosafer Spine — Consent-Banner (TDDDG § 25 / DSGVO) + Google Ads Conversion-Tracking
  *
- * Voraussetzung: Im <head> jeder Seite steht bereits der gtag.js-Block mit
- *   gtag('consent', 'default', { ... alle 'denied' ... });
- *   gtag('config', 'G-VQ4L0ZGEHG');   // GA4
- *   gtag('config', 'AW-18342120773'); // Google Ads
+ * Das Google-Tag (GA4 + Google Ads) steht NICHT mehr im <head> der Seiten. Es wird erst hier
+ * geladen, und zwar ausschließlich nach aktiver Zustimmung ("Alle akzeptieren", auch aus der
+ * gespeicherten Auswahl eines früheren Besuchs). Ohne Zustimmung geht kein Request an Google.
+ * Reihenfolge beim Laden: consent default (denied) -> consent update (granted) -> js -> config
+ * -> Script-Tag, damit schon der erste Seitenaufruf nach der Zustimmung vollständig gemessen wird.
  *
- * Diese Datei ergänzt:
- *   1. Ein Consent-Banner, das den Consent Mode auf 'granted' hebt — erst nach aktiver Zustimmung.
- *   2. Conversion-Tracking für Terminbuchung (Doctolib), Anruf und E-Mail.
+ * Diese Datei enthält:
+ *   1. Ein Consent-Banner, das den Google-Tag erst nach aktiver Zustimmung lädt.
+ *   2. Conversion-Tracking für Terminbuchung (Doctolib), Anruf und E-Mail (nur mit Zustimmung).
+ *   3. Aktivierung der Matomo-Heatmaps nach Zustimmung.
  *
  * Widerruf: window.mosaferConsent.reopen()  — im Datenschutztext verlinkt.
  */
@@ -24,28 +26,81 @@
   var CONVERSION_ANRUF  = ADS_ID + '/P75yCI2cxtQcEMWamqpE'; // Telefonanruf
 
   var STORAGE_KEY = 'mosafer_consent_v1';
+  var HEATMAP_ENDE = new Date('2026-11-11T00:00:00+01:00'); // Ende der Heatmap-Testphase: 10.11.2026
   var isEnglish = (document.documentElement.lang || 'de').toLowerCase().indexOf('en') === 0;
 
   var TXT = isEnglish ? {
     title: 'Privacy settings',
-    body: 'We use cookies and similar technologies to measure how our website is used (including click and scroll heatmaps with Matomo) and how effective our ads are. These are only set with your consent. Necessary functions work without them.',
+    body: 'With “Accept all”, we load Google Analytics and Google Ads (Google Ireland, transfer to the US possible), set cookies and enable the Matomo heatmap to measure usage and ad effectiveness. With “Necessary only”, none of this happens and the website works fully. Cookieless Matomo visit measurement runs regardless.',
     accept: 'Accept all',
     reject: 'Necessary only',
     policy: 'Privacy policy',
     settings: 'Privacy settings'
   } : {
     title: 'Datenschutz-Einstellungen',
-    body: 'Wir verwenden Cookies und vergleichbare Technologien, um die Nutzung unserer Website (u. a. Klick- und Scroll-Auswertung als Heatmap mit Matomo) und die Wirksamkeit unserer Anzeigen zu messen. Diese werden ausschließlich mit Ihrer Einwilligung gesetzt. Die Website funktioniert auch ohne sie vollständig.',
+    body: 'Mit „Alle akzeptieren“ laden wir Google Analytics und Google Ads (Google Ireland, Übermittlung in die USA möglich), setzen Cookies und aktivieren die Heatmap mit Matomo, um Nutzung und Anzeigenwirksamkeit zu messen. Mit „Nur notwendige“ geschieht davon nichts; die Website funktioniert vollständig. Die cookielose Matomo-Reichweitenmessung läuft unabhängig davon.',
     accept: 'Alle akzeptieren',
     reject: 'Nur notwendige',
     policy: 'Datenschutzerklärung',
     settings: 'Datenschutz-Einstellungen'
   };
 
-  function gtagSafe() {
-    if (typeof window.gtag === 'function') {
-      window.gtag.apply(null, arguments);
+  /* --- Google-Tag: wird erst nach Einwilligung geladen ----------------- */
+  var GA_ID = 'G-VQ4L0ZGEHG';
+  var googleLoaded = false;   // Tag wurde in DIESER Seitenansicht aktiviert
+  var consentGranted = null;  // In-Memory-Stand, falls localStorage blockiert ist
+
+  function ensureGtag() {
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.gtag !== 'function') {
+      // gtag muss das arguments-Objekt in den dataLayer schieben (kein Array).
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      // Voreinstellung: alles abgelehnt. ad_personalization bleibt auch nach Zustimmung aus,
+      // da wir nur messen (Datenschutzerklärung Ziffer 9 und 10), nicht personalisieren.
+      window.gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+      });
     }
+  }
+
+  function gtagSafe() {
+    ensureGtag();
+    window.gtag.apply(null, arguments);
+  }
+
+  function googleScriptPresent() {
+    return !!document.querySelector('script[src*="googletagmanager.com/gtag/js"]');
+  }
+
+  function loadGoogleTag() {
+    if (googleLoaded) return;
+    googleLoaded = true;
+    // Eine noch gecachte alte Seitenversion lädt das Tag selbst im <head>: nichts doppelt laden.
+    if (googleScriptPresent()) return;
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+    window.gtag('config', ADS_ID);
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+  }
+
+  function deleteGoogleCookies() {
+    var host = window.location.hostname;
+    var parts = host.split('.');
+    var domains = ['', host, '.' + host, '.' + parts.slice(-2).join('.')];
+    document.cookie.split(';').forEach(function (c) {
+      var name = c.split('=')[0].trim();
+      if (!/^(_ga|_gid|_gat|_gcl_|_gac_)/.test(name)) return;
+      domains.forEach(function (d) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' +
+          (d ? '; domain=' + d : '');
+      });
+    });
   }
 
   /* --- Consent lesen / schreiben ------------------------------------- */
@@ -69,21 +124,48 @@
   }
 
   function applyConsent(granted) {
-    var state = granted ? 'granted' : 'denied';
-    gtagSafe('consent', 'update', {
-      ad_storage: state,
-      ad_user_data: state,
-      ad_personalization: state,
-      analytics_storage: state
-    });
+    consentGranted = granted;
+    try {
+      ensureGtag();
+      if (granted) {
+        // Reihenfolge ist wichtig: erst die Einwilligung melden, dann Tag laden und konfigurieren.
+        window.gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'denied',
+          analytics_storage: 'granted'
+        });
+        loadGoogleTag();
+      } else {
+        window.gtag('consent', 'update', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'denied'
+        });
+      }
+    } catch (e) { /* Das Google-Tag darf Banner und Heatmap-Logik nie blockieren. */ }
+
     // Matomo-Heatmaps (nur Klick-/Scroll-Karten): ausschließlich nach Einwilligung.
     // Standard ist AUS (Snippet der jeweiligen Seite); Widerruf wirkt ab dem nächsten Seitenaufruf.
+    // Zusätzliche Sicherung: Nach Ende der Testphase (10.11.2026, Datenschutzerklärung Ziffer 11)
+    // wird die Heatmap auch bei Zustimmung nicht mehr aktiviert, selbst wenn sie in Matomo noch läuft.
     if (window._paq) {
-      window._paq.push([granted ? 'HeatmapSessionRecording::enable' : 'HeatmapSessionRecording::disable']);
+      var heatmapAn = granted && new Date() < HEATMAP_ENDE;
+      window._paq.push([heatmapAn ? 'HeatmapSessionRecording::enable' : 'HeatmapSessionRecording::disable']);
+    }
+
+    // Widerruf nach bereits geladenem Tag: Google-Cookies entfernen und neu laden,
+    // damit keine weiteren Meldungen an Google gehen. (Beim Seitenstart mit gespeicherter
+    // Ablehnung ist googleLoaded false, daher kein Neuladen.)
+    if (!granted && googleLoaded) {
+      try { deleteGoogleCookies(); } catch (e) { /* ignorieren */ }
+      window.location.reload();
     }
   }
 
   function hasConsent() {
+    if (consentGranted !== null) return consentGranted;
     var stored = readConsent();
     return !!(stored && stored.granted);
   }
@@ -182,8 +264,8 @@
     // Zweitmessung. Es werden dabei keine Cookies gesetzt.
     if (window._paq) window._paq.push(['trackEvent', 'Termin', eventName]);
 
-    // Ab hier nur mit Einwilligung: Google Ads / GA4. Consent Mode würde zwar
-    // ohnehin blocken, aber so entsteht gar kein Request.
+    // Ab hier nur mit Einwilligung: Google Ads / GA4. Ohne Einwilligung ist das
+    // Google-Tag gar nicht geladen, es entsteht also kein Request.
     if (!hasConsent()) return;
     gtagSafe('event', 'conversion', { send_to: sendTo });
     gtagSafe('event', eventName); // zusätzlich als GA4-Ereignis
@@ -207,6 +289,26 @@
     }, true);
   }
 
+  /* --- Link "Datenschutz-Einstellungen" im Footer jeder Seite ------------- */
+  function addSettingsLink() {
+    // Widerruf muss so einfach sein wie die Einwilligung (Art. 7 Abs. 3 DSGVO).
+    if (document.querySelector('footer a[href="#datenschutz-einstellungen"]')) return;
+    var list = document.querySelector('footer .footer-links');
+    if (!list) return;
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#datenschutz-einstellungen';
+    a.textContent = TXT.settings;
+    li.appendChild(a);
+    var policy = list.querySelector('a[href$="datenschutz.html"]');
+    var policyLi = policy && policy.parentNode;
+    if (policyLi && policyLi.parentNode === list) {
+      list.insertBefore(li, policyLi.nextSibling);
+    } else {
+      list.appendChild(li);
+    }
+  }
+
   /* --- Init ------------------------------------------------------------ */
   function init() {
     var stored = readConsent();
@@ -216,6 +318,19 @@
       openBanner();
     }
     bindConversions();
+    addSettingsLink();
+
+    // Widerruf in einem anderen Tab oder bei Rückkehr aus dem Browser-Cache (Zurück-Taste):
+    // War das Google-Tag hier schon geladen, neu laden, damit es nicht weiterläuft.
+    function recheckConsent() {
+      var s = readConsent();
+      if (googleLoaded && s && s.granted === false) {
+        try { deleteGoogleCookies(); } catch (e) { /* ignorieren */ }
+        window.location.reload();
+      }
+    }
+    window.addEventListener('pageshow', function (e) { if (e.persisted) recheckConsent(); });
+    window.addEventListener('storage', function (e) { if (e.key === STORAGE_KEY) recheckConsent(); });
 
     // Widerruf: window.mosaferConsent.reopen() oder <a href="#datenschutz-einstellungen">
     document.addEventListener('click', function (ev) {
