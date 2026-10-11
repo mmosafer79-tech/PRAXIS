@@ -229,6 +229,9 @@
     <script>
       var _paq = window._paq = window._paq || [];
       _paq.push(['disableCookies']);
+      // Heatmap-Analyse: standardmäßig AUS, wird erst nach Einwilligung aktiviert (consent-tracking.js)
+      _paq.push(['HeatmapSessionRecording::disable']);
+      _paq.push(['HeatmapSessionRecording::disableRecordMovements']);
       _paq.push(['setDoNotTrack', true]);
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);

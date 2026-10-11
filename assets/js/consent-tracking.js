@@ -28,14 +28,14 @@
 
   var TXT = isEnglish ? {
     title: 'Privacy settings',
-    body: 'We use cookies and similar technologies to measure how our website is used and how effective our ads are. These are only set with your consent. Necessary functions work without them.',
+    body: 'We use cookies and similar technologies to measure how our website is used (including click and scroll heatmaps with Matomo) and how effective our ads are. These are only set with your consent. Necessary functions work without them.',
     accept: 'Accept all',
     reject: 'Necessary only',
     policy: 'Privacy policy',
     settings: 'Privacy settings'
   } : {
     title: 'Datenschutz-Einstellungen',
-    body: 'Wir verwenden Cookies und vergleichbare Technologien, um die Nutzung unserer Website und die Wirksamkeit unserer Anzeigen zu messen. Diese werden ausschließlich mit Ihrer Einwilligung gesetzt. Die Website funktioniert auch ohne sie vollständig.',
+    body: 'Wir verwenden Cookies und vergleichbare Technologien, um die Nutzung unserer Website (u. a. Klick- und Scroll-Auswertung als Heatmap mit Matomo) und die Wirksamkeit unserer Anzeigen zu messen. Diese werden ausschließlich mit Ihrer Einwilligung gesetzt. Die Website funktioniert auch ohne sie vollständig.',
     accept: 'Alle akzeptieren',
     reject: 'Nur notwendige',
     policy: 'Datenschutzerklärung',
@@ -76,6 +76,11 @@
       ad_personalization: state,
       analytics_storage: state
     });
+    // Matomo-Heatmaps (nur Klick-/Scroll-Karten): ausschließlich nach Einwilligung.
+    // Standard ist AUS (Snippet der jeweiligen Seite); Widerruf wirkt ab dem nächsten Seitenaufruf.
+    if (window._paq) {
+      window._paq.push([granted ? 'HeatmapSessionRecording::enable' : 'HeatmapSessionRecording::disable']);
+    }
   }
 
   function hasConsent() {
