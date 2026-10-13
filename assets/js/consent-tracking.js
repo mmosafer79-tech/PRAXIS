@@ -22,8 +22,9 @@
    * Aus Google Ads (Tools > Conversions) übernommen. Bei Änderung hier anpassen.
    * ------------------------------------------------------------------- */
   var ADS_ID = 'AW-18342120773';
-  var CONVERSION_TERMIN = ADS_ID + '/tg0iCO_F1NYcEMWamqpE'; // Terminanfrage (Doctolib / E-Mail)
-  var CONVERSION_ANRUF  = ADS_ID + '/P75yCI2cxtQcEMWamqpE'; // Telefonanruf
+  var CONVERSION_TERMIN = ADS_ID + '/tg0iCO_F1NYcEMWamqpE'; // Terminanfragen (Doctolib / Terminseite), primär
+  var CONVERSION_ANRUF  = ADS_ID + '/kSGsCK_z3ZodEMWamqpE'; // Anruf-Klick Website (sekundär, seit 13.10.2026)
+  var CONVERSION_EMAIL  = ADS_ID + '/YQaBCKzz3ZodEMWamqpE'; // E-Mail-Klick Website (sekundär, seit 13.10.2026)
 
   var STORAGE_KEY = 'mosafer_consent_v1';
   var HEATMAP_ENDE = new Date('2026-11-11T00:00:00+01:00'); // Ende der Heatmap-Testphase: 10.11.2026
@@ -281,7 +282,7 @@
       if (href.indexOf('tel:') === 0) {
         trackConversion(CONVERSION_ANRUF, 'anruf_klick');
       } else if (href.indexOf('mailto:') === 0) {
-        trackConversion(CONVERSION_TERMIN, 'email_klick');
+        trackConversion(CONVERSION_EMAIL, 'email_klick');
       } else if (href.indexOf('doctolib') !== -1 || href.indexOf('termin.html') !== -1) {
         // termin.html ist die eigene Weiterleitungsseite zu Doctolib (seit 72314a1,
         // 14.09.2026). Ohne diese Bedingung feuert die Termin-Conversion nicht mehr.
