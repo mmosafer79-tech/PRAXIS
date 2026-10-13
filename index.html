@@ -352,6 +352,9 @@
     <script>
       var _paq = window._paq = window._paq || [];
       _paq.push(['disableCookies']);
+      // Keine Geräteinformationen auslesen (Auflösung, Plugins, Client Hints) und keine Ladezeiten messen
+      _paq.push(['disableBrowserFeatureDetection']);
+      _paq.push(['disablePerformanceTracking']);
       // Heatmap-Analyse: standardmäßig AUS, wird erst nach Einwilligung aktiviert (consent-tracking.js)
       _paq.push(['HeatmapSessionRecording::disable']);
       _paq.push(['HeatmapSessionRecording::disableRecordMovements']);
